@@ -1,0 +1,29 @@
+2025-05-04 01:18:42.123 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:42.162 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:50.957 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:50.958 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:53.773 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:53.773 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:54.005 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:54.006 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:54.173 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:54.173 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:54.350 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:54.350 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:54.515 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:54.515 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:55.953 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:55.953 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:56.106 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:56.106 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:18:56.314 +05:30 [WRN] Authentication failed: User not found: doctor
+2025-05-04 01:18:56.315 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 01:51:21.742 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 01:51:50.029 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 01:51:50.055 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 11:41:43.153 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 11:41:43.355 +05:30 [ERR] Failed to load theme resource: avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 11:41:43.359 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 11:41:43.360 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-04 11:41:43.360 +05:30 [ERR] Failed to load theme resource: avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 11:41:43.360 +05:30 [INF] Theme applied: Cool Blue - Light

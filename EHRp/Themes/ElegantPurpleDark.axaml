@@ -1,0 +1,191 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Styles.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ThemePrimaryColor">#9b59b6</Color>
+            <Color x:Key="ThemeSecondaryColor">#8e44ad</Color>
+            <Color x:Key="ThemeAccentColor">#3498db</Color>
+            <Color x:Key="ThemeBackgroundColor">#2c2133</Color>
+            <Color x:Key="ThemeButtonColor">#9b59b6</Color>
+            <Color x:Key="ThemeTextColor">#ecf0f1</Color>
+
+            <Color x:Key="ThemeHoverColor">#8e44ad</Color>
+            <Color x:Key="ThemeBorderColor">#34495e</Color>
+            <Color x:Key="ThemeHighlightColor">#3d2c4a</Color>
+            <Color x:Key="ThemeErrorColor">#e74c3c</Color>
+            <Color x:Key="ThemeSuccessColor">#2ecc71</Color>
+            <Color x:Key="ThemeWarningColor">#f39c12</Color>
+            <Color x:Key="ThemeInfoColor">#3498db</Color>
+
+            <SolidColorBrush x:Key="ThemePrimaryBrush" Color="{StaticResource ThemePrimaryColor}"/>
+            <SolidColorBrush x:Key="ThemeSecondaryBrush" Color="{StaticResource ThemeSecondaryColor}"/>
+            <SolidColorBrush x:Key="ThemeAccentBrush" Color="{StaticResource ThemeAccentColor}"/>
+            <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="{StaticResource ThemeBackgroundColor}"/>
+            <SolidColorBrush x:Key="ThemeButtonBrush" Color="{StaticResource ThemeButtonColor}"/>
+            <SolidColorBrush x:Key="ThemeTextBrush" Color="{StaticResource ThemeTextColor}"/>
+            <SolidColorBrush x:Key="ThemeHoverBrush" Color="{StaticResource ThemeHoverColor}"/>
+            <SolidColorBrush x:Key="ThemeBorderBrush" Color="{StaticResource ThemeBorderColor}"/>
+            <SolidColorBrush x:Key="ThemeHighlightBrush" Color="{StaticResource ThemeHighlightColor}"/>
+            <SolidColorBrush x:Key="ThemeErrorBrush" Color="{StaticResource ThemeErrorColor}"/>
+            <SolidColorBrush x:Key="ThemeSuccessBrush" Color="{StaticResource ThemeSuccessColor}"/>
+            <SolidColorBrush x:Key="ThemeWarningBrush" Color="{StaticResource ThemeWarningColor}"/>
+            <SolidColorBrush x:Key="ThemeInfoBrush" Color="{StaticResource ThemeInfoColor}"/>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <Style Selector="Button">
+        <Setter Property="Background" Value="{StaticResource ThemeButtonBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="IsHitTestVisible" Value="True"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+
+    <Style Selector="Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource ThemeHoverBrush}"/>
+    </Style>
+
+    <Style Selector="Button:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="TextBox">
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="Background" Value="#1a1621"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource ThemePrimaryBrush}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource ThemeHighlightBrush}"/>
+        <Setter Property="SelectionForegroundBrush" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+
+    <Style Selector="TextBox:focus">
+        <Setter Property="BorderBrush" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="ComboBox">
+        <Setter Property="Background" Value="#1a1621"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+
+    <Style Selector="ComboBox:focus">
+        <Setter Property="BorderBrush" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="CheckBox">
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="CheckBox:checked /template/ Border#NormalRectangle">
+        <Setter Property="Background" Value="{StaticResource ThemePrimaryBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="RadioButton">
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="RadioButton:checked /template/ Ellipse#CheckOuterEllipse">
+        <Setter Property="Fill" Value="{StaticResource ThemePrimaryBrush}"/>
+        <Setter Property="Stroke" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="ListBox">
+        <Setter Property="Background" Value="#1a1621"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource ThemeHighlightBrush}"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="TabControl">
+        <Setter Property="Background" Value="#1a1621"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style Selector="TabItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Padding" Value="10,5"/>
+    </Style>
+
+    <Style Selector="TabItem:selected">
+        <Setter Property="Background" Value="{StaticResource ThemeHighlightBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="DataGrid">
+        <Setter Property="Background" Value="#1a1621"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style Selector="DataGridColumnHeader">
+        <Setter Property="Background" Value="{StaticResource ThemeHighlightBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="10,5"/>
+    </Style>
+
+    <Style Selector="DataGridRow:selected">
+        <Setter Property="Background" Value="{StaticResource ThemeHighlightBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="Menu">
+        <Setter Property="Background" Value="{StaticResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="MenuItem:selected /template/ Border#PART_LayoutRoot">
+        <Setter Property="Background" Value="{StaticResource ThemeHighlightBrush}"/>
+    </Style>
+
+    <Style Selector="ToolTip">
+        <Setter Property="Background" Value="{StaticResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+
+    <Style Selector="ProgressBar">
+        <Setter Property="Background" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="Slider">
+        <Setter Property="Foreground" Value="{StaticResource ThemePrimaryBrush}"/>
+    </Style>
+
+    <Style Selector="ScrollBar">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style Selector="ScrollBar /template/ Thumb">
+        <Setter Property="Background" Value="{StaticResource ThemeBorderBrush}"/>
+    </Style>
+
+    <Style Selector="ScrollBar /template/ Thumb:pointerover">
+        <Setter Property="Background" Value="{StaticResource ThemeHoverBrush}"/>
+    </Style>
+
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+
+</Styles>

@@ -1,0 +1,160 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EHRp.Views.Login.LoginView"
+             x:DataType="vm:LoginViewModel">
+
+    <Design.DataContext>
+        <vm:LoginViewModel/>
+    </Design.DataContext>
+
+    <Grid Background="#F5F5F5">
+        <Border Width="400" 
+                Height="450" 
+                Background="White" 
+                CornerRadius="10" 
+                BoxShadow="0 4 20 0 #20000000">
+            <Grid RowDefinitions="Auto,*">
+                <!-- Header -->
+                <Border Grid.Row="0" 
+                        Background="#172D44" 
+                        Padding="20" 
+                        CornerRadius="10,10,0,0">
+                    <StackPanel>
+                        <TextBlock Text="EHRp" 
+                                   Foreground="White" 
+                                   FontSize="28" 
+                                   FontWeight="Bold" 
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="Electronic Health Records - Personal Edition" 
+                                   Foreground="White" 
+                                   FontSize="14" 
+                                   HorizontalAlignment="Center" 
+                                   Margin="0,5,0,0"/>
+                        <TextBlock Text="Clinic Management System" 
+                                   Foreground="#AAAAAA" 
+                                   FontSize="12" 
+                                   HorizontalAlignment="Center" 
+                                   Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Login Form -->
+                <StackPanel Grid.Row="1" 
+                            Margin="30" 
+                            Spacing="15" 
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Login to your account" 
+                               FontSize="18" 
+                               FontWeight="SemiBold" 
+                               HorizontalAlignment="Center" 
+                               Margin="0,0,0,10"/>
+                    
+                    <!-- Error Message -->
+                    <TextBlock Text="{Binding ErrorMessage}" 
+                               Foreground="Red" 
+                               IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" 
+                               HorizontalAlignment="Center" 
+                               Margin="0,0,0,10"/>
+                    
+                    <!-- Username -->
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Username" FontWeight="Medium"/>
+                        <TextBox Text="{Binding Username}" 
+                                 Watermark="Enter your username" 
+                                 Padding="10,8"
+                                 Foreground="Black"
+                                 Background="White">
+                            <TextBox.Styles>
+                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </TextBox.Styles>
+                        </TextBox>
+                    </StackPanel>
+                    
+                    <!-- Password -->
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Password" FontWeight="Medium"/>
+                        <TextBox Text="{Binding Password}" 
+                                 PasswordChar="•" 
+                                 Watermark="Enter your password" 
+                                 Padding="10,8"
+                                 Foreground="Black"
+                                 Background="White">
+                            <TextBox.Styles>
+                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </TextBox.Styles>
+                        </TextBox>
+                    </StackPanel>
+                    
+                    <!-- Forgot Password Link -->
+                    <Button Content="Forgot Password?" 
+                            Command="{Binding ForgotPasswordCommand}"
+                            Foreground="#2196F3"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            HorizontalAlignment="Center"
+                            Margin="0,5">
+                        <Button.Styles>
+                            <Style Selector="Button:pointerover /template/ ContentPresenter">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="TextBlock.Foreground" Value="#1976D2"/>
+                                <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                    
+                    <!-- Login Button -->
+                    <Button Command="{Binding LoginCommand}" 
+                            Content="Login" 
+                            HorizontalAlignment="Stretch" 
+                            HorizontalContentAlignment="Center" 
+                            Background="#2196F3" 
+                            Foreground="White" 
+                            Padding="0,10" 
+                            Margin="0,10,0,0">
+                        <Button.Styles>
+                            <Style Selector="Button:pointerover /template/ ContentPresenter">
+                                <Setter Property="Background" Value="#1976D2"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Style>
+                        </Button.Styles>
+                    </Button>
+                    
+                    <!-- Loading Indicator -->
+                    <ProgressBar IsIndeterminate="True" 
+                                 IsVisible="{Binding IsLoading}" 
+                                 Margin="0,10"/>
+                    
+                    <!-- Default Credentials Help -->
+                    <TextBlock Text="Default login: doctor / password" 
+                               Foreground="#888888" 
+                               FontSize="12" 
+                               HorizontalAlignment="Center" 
+                               Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

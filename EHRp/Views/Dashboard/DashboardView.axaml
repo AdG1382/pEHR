@@ -1,0 +1,268 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels"
+             xmlns:local="using:EHRp.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EHRp.Views.Dashboard.DashboardView"
+             x:DataType="vm:DashboardViewModel">
+
+    <Design.DataContext>
+        <vm:DashboardViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,Auto,*">
+        <TextBlock Grid.Row="0" 
+                   Text="Dashboard" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Margin="20,10"
+                   HorizontalAlignment="Center"/>
+        
+        <!-- Action Buttons Section -->
+        <StackPanel Grid.Row="1" 
+                    Orientation="Vertical" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,0,0,20" 
+                    Spacing="10">
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        Spacing="10">
+                <Button Content="Add Patient" 
+                        Command="{Binding AddPatientCommand}"
+                        Background="#FF9800"
+                        Foreground="White"
+                        Padding="15,8"/>
+                
+                <Button Content="Add Visit" 
+                        Command="{Binding AddVisitCommand}"
+                        Background="#4CAF50"
+                        Foreground="White"
+                        Padding="15,8"/>
+                
+                <Button Content="New Prescription" 
+                        Command="{Binding NewPrescriptionCommand}"
+                        Background="#2196F3"
+                        Foreground="White"
+                        Padding="15,8"/>
+            </StackPanel>
+            
+            <!-- Status Display -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    Padding="15" 
+                    Margin="0,10,0,0" 
+                    CornerRadius="5"
+                    Width="400">
+                <StackPanel>
+                    <TextBlock Text="Command Status:" 
+                               FontWeight="Bold" 
+                               Margin="0,0,0,10"/>
+                    <TextBlock Text="{Binding StatusMessage}" 
+                               Margin="10,0,0,0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        
+        <ScrollViewer Grid.Row="2" Margin="20">
+            <StackPanel Spacing="20">
+                <!-- Summary Cards -->
+                <Grid ColumnDefinitions="*,*,*" Margin="0,10" RowDefinitions="Auto">
+                    <!-- Patients Card -->
+                    <Border Grid.Column="0" 
+                            Background="#4CAF50" 
+                            CornerRadius="5" 
+                            Padding="15" 
+                            Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="Patients" 
+                                       Foreground="White" 
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding TotalPatients}" 
+                                       Foreground="White" 
+                                       FontSize="32" 
+                                       FontWeight="Bold" 
+                                       Margin="0,10,0,0"/>
+                            <TextBlock Text="Total Patients" 
+                                       Foreground="White" 
+                                       Opacity="0.8"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Appointments Card -->
+                    <Border Grid.Column="1" 
+                            Background="#2196F3" 
+                            CornerRadius="5" 
+                            Padding="15" 
+                            Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="Appointments" 
+                                       Foreground="White" 
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding AppointmentsThisWeek}" 
+                                       Foreground="White" 
+                                       FontSize="32" 
+                                       FontWeight="Bold" 
+                                       Margin="0,10,0,0"/>
+                            <TextBlock Text="Upcoming Appointments" 
+                                       Foreground="White" 
+                                       Opacity="0.8"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Prescriptions Card -->
+                    <Border Grid.Column="2" 
+                            Background="#FF9800" 
+                            CornerRadius="5" 
+                            Padding="15" 
+                            Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="Prescriptions" 
+                                       Foreground="White" 
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding PendingPrescriptions}" 
+                                       Foreground="White" 
+                                       FontSize="32" 
+                                       FontWeight="Bold" 
+                                       Margin="0,10,0,0"/>
+                            <TextBlock Text="Prescription Templates" 
+                                       Foreground="White" 
+                                       Opacity="0.8"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                
+                <!-- Recent Activity Section -->
+                <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                        CornerRadius="5" 
+                        Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Recent Activity" 
+                                   FontWeight="Bold" 
+                                   FontSize="18" 
+                                   Margin="0,0,0,10"/>
+                        
+                        <Border Background="{DynamicResource ThemeHighlightBrush}" 
+                                CornerRadius="3" 
+                                Padding="10" 
+                                Margin="0,5">
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <Ellipse Grid.Column="0" 
+                                         Width="10" 
+                                         Height="10" 
+                                         Fill="{DynamicResource ThemeSuccessBrush}" 
+                                         VerticalAlignment="Center" 
+                                         Margin="0,0,10,0"/>
+                                <TextBlock Grid.Column="1" 
+                                           Text="New patient John Doe added" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource ThemeTextBrush}"/>
+                                <TextBlock Grid.Column="2" 
+                                           Text="Today" 
+                                           Opacity="0.6" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource ThemeTextBrush}"/>
+                            </Grid>
+                        </Border>
+                        
+                        <Border Background="{DynamicResource ThemeHighlightBrush}" 
+                                CornerRadius="3" 
+                                Padding="10" 
+                                Margin="0,5">
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <Ellipse Grid.Column="0" 
+                                         Width="10" 
+                                         Height="10" 
+                                         Fill="{DynamicResource ThemeInfoBrush}" 
+                                         VerticalAlignment="Center" 
+                                         Margin="0,0,10,0"/>
+                                <TextBlock Grid.Column="1" 
+                                           Text="Appointment scheduled with Jane Smith" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource ThemeTextBrush}"/>
+                                <TextBlock Grid.Column="2" 
+                                           Text="Today" 
+                                           Opacity="0.6" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource ThemeTextBrush}"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Upcoming Appointments Section -->
+                <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                        CornerRadius="5" 
+                        Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Upcoming Appointments" 
+                                   FontWeight="Bold" 
+                                   FontSize="18" 
+                                   Margin="0,0,0,10"/>
+                        
+                        <Border Background="{DynamicResource ThemeHighlightBrush}" 
+                                CornerRadius="3" 
+                                Padding="10" 
+                                Margin="0,5">
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <Border Grid.Column="0" 
+                                        Background="{DynamicResource ThemeSuccessBrush}" 
+                                        Width="5" 
+                                        Height="30" 
+                                        CornerRadius="3" 
+                                        Margin="0,0,10,0"/>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Follow-up Checkup" 
+                                               FontWeight="Bold"
+                                               Foreground="{DynamicResource ThemeTextBrush}"/>
+                                    <TextBlock Text="John Doe - Blood pressure monitoring" 
+                                               Opacity="0.7" 
+                                               FontSize="12"
+                                               Foreground="{DynamicResource ThemeTextBrush}"/>
+                                </StackPanel>
+                                <Button Grid.Column="2" 
+                                        Content="View Details"
+                                        Command="{Binding ViewPatientCommand}"
+                                        CommandParameter="John Doe"
+                                        VerticalAlignment="Center"
+                                        Padding="8,4"
+                                        IsHitTestVisible="True"/>
+                            </Grid>
+                        </Border>
+                        
+                        <Border Background="{DynamicResource ThemeHighlightBrush}" 
+                                CornerRadius="3" 
+                                Padding="10" 
+                                Margin="0,5">
+                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                <Border Grid.Column="0" 
+                                        Background="{DynamicResource ThemeInfoBrush}" 
+                                        Width="5" 
+                                        Height="30" 
+                                        CornerRadius="3" 
+                                        Margin="0,0,10,0"/>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Annual Physical" 
+                                               FontWeight="Bold"
+                                               Foreground="{DynamicResource ThemeTextBrush}"/>
+                                    <TextBlock Text="Jane Smith - Complete health checkup" 
+                                               Opacity="0.7" 
+                                               FontSize="12"
+                                               Foreground="{DynamicResource ThemeTextBrush}"/>
+                                </StackPanel>
+                                <Button Grid.Column="2" 
+                                        Content="View Details"
+                                        Command="{Binding ViewPatientCommand}"
+                                        CommandParameter="Jane Smith"
+                                        VerticalAlignment="Center"
+                                        Padding="8,4"
+                                        IsHitTestVisible="True"/>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

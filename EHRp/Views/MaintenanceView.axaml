@@ -1,0 +1,143 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="EHRp.Views.MaintenanceView"
+             x:DataType="vm:MaintenanceViewModel">
+    
+    <Design.DataContext>
+        <vm:MaintenanceViewModel/>
+    </Design.DataContext>
+    
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="System Maintenance" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,20"/>
+            
+            <!-- Database Maintenance -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Padding="15" 
+                    Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="Database Maintenance" 
+                               FontSize="18" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,10"/>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="Backup Database" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="Backup Now" 
+                                Command="{Binding BackupDatabaseCommand}"/>
+                    </Grid>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="Restore Database" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="Restore from Backup" 
+                                Command="{Binding RestoreDatabaseCommand}"/>
+                    </Grid>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="Optimize Database" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="Optimize Now" 
+                                Command="{Binding OptimizeDatabaseCommand}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+            
+            <!-- System Logs -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Padding="15" 
+                    Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="System Logs" 
+                               FontSize="18" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,10"/>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="View System Logs" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="View Logs" 
+                                Command="{Binding ViewLogsCommand}"/>
+                    </Grid>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="Clear System Logs" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="Clear Logs" 
+                                Command="{Binding ClearLogsCommand}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+            
+            <!-- User Management -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Padding="15" 
+                    Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="User Management" 
+                               FontSize="18" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,10"/>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="Manage Users" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="Manage Users" 
+                                Command="{Binding ManageUsersCommand}"/>
+                    </Grid>
+                    
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <TextBlock Grid.Column="0" 
+                                   Text="Reset User Password" 
+                                   VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" 
+                                Content="Reset Password" 
+                                Command="{Binding ResetPasswordCommand}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+            
+            <!-- Status Message -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Padding="15" 
+                    Margin="0,0,0,20"
+                    IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                <TextBlock Text="{Binding StatusMessage}" 
+                           Foreground="{Binding IsStatusSuccess, Converter={StaticResource BoolToColorConverter}, ConverterParameter='Green;Red'}" 
+                           HorizontalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,210 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels.Visits"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EHRp.Views.Visits.VisitFormView"
+             x:DataType="vm:VisitFormViewModel">
+
+    <Design.DataContext>
+        <vm:VisitFormViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <TextBlock Grid.Row="0" 
+                   Text="Add New Visit" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Margin="20,15"
+                   HorizontalAlignment="Center"/>
+        
+        <ScrollViewer Grid.Row="1" Margin="20">
+            <Border Background="White" 
+                    CornerRadius="10" 
+                    BoxShadow="0 2 10 0 #20000000"
+                    Padding="25">
+                <StackPanel Spacing="20" MaxWidth="600">
+                    <!-- Status Message -->
+                    <Border Background="{DynamicResource ThemeHighlightBrush}" 
+                            CornerRadius="5" 
+                            Padding="15" 
+                            IsVisible="{Binding IsStatusVisible}">
+                        <TextBlock Text="{Binding StatusMessage}" 
+                                   Foreground="{Binding IsStatusError, Converter={StaticResource BoolToErrorBrushConverter}}"
+                                   TextWrapping="Wrap"/>
+                    </Border>
+                    
+                    <!-- Form Fields -->
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" VerticalAlignment="Top">
+                        <!-- Patient Name -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                   Text="Patient:" 
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,15,0"
+                                   FontWeight="Medium"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" 
+                                 Text="{Binding PatientName}" 
+                                 Watermark="Enter patient name"
+                                 IsReadOnly="{Binding PatientName, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                                 Padding="10,8"
+                                 Foreground="Black"
+                                 Background="White">
+                            <TextBox.Styles>
+                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </TextBox.Styles>
+                        </TextBox>
+                        
+                        <!-- Visit Date -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" 
+                                   Text="Visit Date:" 
+                                   VerticalAlignment="Center"
+                                   Margin="0,20,15,0"
+                                   FontWeight="Medium"/>
+                        <DatePicker Grid.Row="1" Grid.Column="1" 
+                                    SelectedDate="{Binding VisitDate}"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Center"
+                                    Padding="10,8"
+                                    Background="White">
+                            <DatePicker.Styles>
+                                <Style Selector="DatePicker:pointerover /template/ Border#Background">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </DatePicker.Styles>
+                        </DatePicker>
+                        
+                        <!-- Visit Type -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" 
+                                   Text="Visit Type:" 
+                                   VerticalAlignment="Center"
+                                   Margin="0,20,15,0"
+                                   FontWeight="Medium"/>
+                        <ComboBox Grid.Row="2" Grid.Column="1" 
+                                  SelectedItem="{Binding VisitType}"
+                                  HorizontalAlignment="Stretch"
+                                  Padding="10,8"
+                                  Background="White">
+                            <ComboBoxItem>Check-up</ComboBoxItem>
+                            <ComboBoxItem>Follow-up</ComboBoxItem>
+                            <ComboBoxItem>Consultation</ComboBoxItem>
+                            <ComboBoxItem>Emergency</ComboBoxItem>
+                            <ComboBoxItem>Procedure</ComboBoxItem>
+                            <ComboBox.Styles>
+                                <Style Selector="ComboBox:pointerover /template/ Border#Background">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </ComboBox.Styles>
+                        </ComboBox>
+                        
+                        <!-- Visit Duration (New Field) -->
+                        <TextBlock Grid.Row="3" Grid.Column="0" 
+                                   Text="Duration:" 
+                                   VerticalAlignment="Center"
+                                   Margin="0,20,15,0"
+                                   FontWeight="Medium"/>
+                        <Grid Grid.Row="3" Grid.Column="1" ColumnDefinitions="*,Auto">
+                            <NumericUpDown Value="30" 
+                                          Minimum="5" 
+                                          Maximum="240" 
+                                          Increment="5"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Center"
+                                          Padding="10,8"
+                                          Background="White">
+                                <NumericUpDown.Styles>
+                                    <Style Selector="NumericUpDown:pointerover /template/ Border#PART_BorderElement">
+                                        <Setter Property="Background" Value="White"/>
+                                        <Setter Property="BorderBrush" Value="#000000"/>
+                                        <Setter Property="BorderThickness" Value="2"/>
+                                    </Style>
+                                </NumericUpDown.Styles>
+                            </NumericUpDown>
+                            <TextBlock Grid.Column="1" 
+                                       Text="minutes" 
+                                       VerticalAlignment="Center" 
+                                       Margin="10,0,0,0"/>
+                        </Grid>
+                        
+                        <!-- Notes -->
+                        <TextBlock Grid.Row="4" Grid.Column="0" 
+                                   Text="Notes:" 
+                                   VerticalAlignment="Top" 
+                                   Margin="0,20,15,0"
+                                   FontWeight="Medium"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" 
+                                 Text="{Binding Notes}" 
+                                 Watermark="Enter visit notes"
+                                 Height="120"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 Padding="10,8"
+                                 Foreground="Black"
+                                 Background="White">
+                            <TextBox.Styles>
+                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#000000"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </TextBox.Styles>
+                        </TextBox>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+        
+        <!-- Buttons -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,10,0,20" 
+                    Spacing="15">
+            <Button Content="Save" 
+                    Command="{Binding SaveVisitCommand}"
+                    Background="#4CAF50"
+                    Foreground="White"
+                    Padding="25,12"
+                    FontWeight="SemiBold">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover /template/ ContentPresenter">
+                        <Setter Property="Background" Value="#388E3C"/>
+                        <Setter Property="Foreground" Value="White"/>
+                    </Style>
+                </Button.Styles>
+            </Button>
+            
+            <Button Content="Cancel" 
+                    Command="{Binding CancelCommand}"
+                    Background="#F44336"
+                    Foreground="White"
+                    Padding="25,12"
+                    FontWeight="SemiBold">
+                <Button.Styles>
+                    <Style Selector="Button:pointerover /template/ ContentPresenter">
+                        <Setter Property="Background" Value="#D32F2F"/>
+                        <Setter Property="Foreground" Value="White"/>
+                    </Style>
+                </Button.Styles>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

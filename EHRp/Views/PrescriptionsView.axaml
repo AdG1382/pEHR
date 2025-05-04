@@ -1,0 +1,98 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="EHRp.Views.PrescriptionsView"
+             x:DataType="vm:PrescriptionsViewModel">
+    
+    <Design.DataContext>
+        <vm:PrescriptionsViewModel/>
+    </Design.DataContext>
+    
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Prescriptions" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,20"/>
+            
+            <!-- Search and Filter -->
+            <Grid ColumnDefinitions="*,Auto,Auto" Margin="0,0,0,20">
+                <TextBox Grid.Column="0" 
+                         Watermark="Search prescriptions..." 
+                         Text="{Binding SearchText}"/>
+                <ComboBox Grid.Column="1" 
+                          ItemsSource="{Binding FilterOptions}" 
+                          SelectedItem="{Binding SelectedFilter}" 
+                          Width="150" 
+                          Margin="10,0"/>
+                <Button Grid.Column="2" 
+                        Content="Search" 
+                        Command="{Binding SearchCommand}"/>
+            </Grid>
+            
+            <!-- Prescriptions List -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Padding="15" 
+                    Margin="0,0,0,20">
+                <Grid RowDefinitions="*,Auto">
+                    <DataGrid Grid.Row="0"
+                              ItemsSource="{Binding Prescriptions}" 
+                              AutoGenerateColumns="False" 
+                              IsReadOnly="True" 
+                              SelectedItem="{Binding SelectedPrescription}"
+                              Height="400">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                            <DataGridTextColumn Header="Patient" Binding="{Binding PatientName}" Width="200"/>
+                            <DataGridTextColumn Header="Medication" Binding="{Binding MedicationName}" Width="200"/>
+                            <DataGridTextColumn Header="Dosage" Binding="{Binding Dosage}" Width="120"/>
+                            <DataGridTextColumn Header="Frequency" Binding="{Binding Frequency}" Width="120"/>
+                            <DataGridTextColumn Header="Start Date" Binding="{Binding StartDate, StringFormat=\{0:MM/dd/yyyy\}}" Width="120"/>
+                            <DataGridTextColumn Header="End Date" Binding="{Binding EndDate, StringFormat=\{0:MM/dd/yyyy\}}" Width="120"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    <!-- Status Message -->
+                    <Border Grid.Row="1" 
+                            Background="{DynamicResource ThemeBackgroundBrush}" 
+                            BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                            BorderThickness="1" 
+                            CornerRadius="5" 
+                            Padding="10" 
+                            Margin="0,10,0,0"
+                            IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                        <TextBlock Text="{Binding StatusMessage}" 
+                                   Foreground="{Binding IsStatusSuccess, Converter={StaticResource BoolToColorConverter}, ConverterParameter='Green;Red'}" 
+                                   HorizontalAlignment="Center"/>
+                    </Border>
+                </Grid>
+            </Border>
+            
+            <!-- Action Buttons -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Spacing="10">
+                <Button Content="New Prescription" 
+                        Command="{Binding NewPrescriptionCommand}" 
+                        Background="{DynamicResource ThemeSuccessBrush}"/>
+                <Button Content="Edit Prescription" 
+                        Command="{Binding EditPrescriptionCommand}" 
+                        IsEnabled="{Binding SelectedPrescription, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+                <Button Content="Print Prescription" 
+                        Command="{Binding PrintPrescriptionCommand}" 
+                        IsEnabled="{Binding SelectedPrescription, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+                <Button Content="Delete Prescription" 
+                        Command="{Binding DeletePrescriptionCommand}" 
+                        IsEnabled="{Binding SelectedPrescription, Converter={x:Static ObjectConverters.IsNotNull}}"
+                        Background="{DynamicResource ThemeErrorBrush}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,100 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="EHRp.Views.AppointmentsView"
+             x:DataType="vm:AppointmentsViewModel">
+    
+    <Design.DataContext>
+        <vm:AppointmentsViewModel/>
+    </Design.DataContext>
+    
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Appointments" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,20"/>
+            
+            <!-- Filter Controls -->
+            <Grid ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,0,0,20">
+                <TextBlock Grid.Column="0" 
+                           Text="Filter by Date:" 
+                           VerticalAlignment="Center" 
+                           Margin="0,0,10,0"/>
+                <DatePicker Grid.Column="1" 
+                            SelectedDate="{Binding FilterDate}"/>
+                <Button Grid.Column="2" 
+                        Content="Today" 
+                        Command="{Binding TodayCommand}" 
+                        Margin="10,0"/>
+                <Button Grid.Column="3" 
+                        Content="All Appointments" 
+                        Command="{Binding AllAppointmentsCommand}"/>
+            </Grid>
+            
+            <!-- Appointments List -->
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Padding="15" 
+                    Margin="0,0,0,20">
+                <Grid RowDefinitions="*,Auto">
+                    <DataGrid Grid.Row="0"
+                              ItemsSource="{Binding Appointments}" 
+                              AutoGenerateColumns="False" 
+                              IsReadOnly="True" 
+                              SelectedItem="{Binding SelectedAppointment}"
+                              Height="400">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                            <DataGridTextColumn Header="Patient" Binding="{Binding PatientName}" Width="200"/>
+                            <DataGridTextColumn Header="Date" Binding="{Binding AppointmentDate, StringFormat=\{0:MM/dd/yyyy\}}" Width="120"/>
+                            <DataGridTextColumn Header="Time" Binding="{Binding AppointmentTime, StringFormat=\{0:HH:mm\}}" Width="100"/>
+                            <DataGridTextColumn Header="Type" Binding="{Binding AppointmentType}" Width="150"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="120"/>
+                            <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" Width="200"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    <!-- Status Message -->
+                    <Border Grid.Row="1" 
+                            Background="{DynamicResource ThemeBackgroundBrush}" 
+                            BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                            BorderThickness="1" 
+                            CornerRadius="5" 
+                            Padding="10" 
+                            Margin="0,10,0,0"
+                            IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                        <TextBlock Text="{Binding StatusMessage}" 
+                                   Foreground="{Binding IsStatusSuccess, Converter={StaticResource BoolToColorConverter}, ConverterParameter='Green;Red'}" 
+                                   HorizontalAlignment="Center"/>
+                    </Border>
+                </Grid>
+            </Border>
+            
+            <!-- Action Buttons -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Spacing="10">
+                <Button Content="Add Appointment" 
+                        Command="{Binding AddAppointmentCommand}" 
+                        Background="{DynamicResource ThemeSuccessBrush}"/>
+                <Button Content="Edit Appointment" 
+                        Command="{Binding EditAppointmentCommand}" 
+                        IsEnabled="{Binding SelectedAppointment, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+                <Button Content="Cancel Appointment" 
+                        Command="{Binding CancelAppointmentCommand}" 
+                        IsEnabled="{Binding SelectedAppointment, Converter={x:Static ObjectConverters.IsNotNull}}"
+                        Background="{DynamicResource ThemeWarningBrush}"/>
+                <Button Content="Delete Appointment" 
+                        Command="{Binding DeleteAppointmentCommand}" 
+                        IsEnabled="{Binding SelectedAppointment, Converter={x:Static ObjectConverters.IsNotNull}}"
+                        Background="{DynamicResource ThemeErrorBrush}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

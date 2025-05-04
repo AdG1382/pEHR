@@ -1,0 +1,32 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="EHRp.App"
+             xmlns:local="using:EHRp"
+             xmlns:vm="using:EHRp.ViewModels"
+             xmlns:converters="using:EHRp.Converters"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+    </Application.Styles>
+    
+    <Application.Resources>
+        <!-- Converters -->
+        <vm:BoolToWidthConverter x:Key="BoolToWidthConverter"/>
+        <vm:BoolToStringConverter x:Key="BoolToStringConverter"/>
+        <vm:BoolToColorConverter x:Key="BoolToColorConverter"/>
+        <vm:AlwaysVisibleConverter x:Key="AlwaysVisibleConverter"/>
+        <vm:BoolToOpacityConverter x:Key="BoolToOpacityConverter"/>
+        <vm:BoolToFontWeightConverter x:Key="BoolToFontWeightConverter"/>
+        <vm:StringToColorConverter x:Key="StringToColorConverter"/>
+        <converters:BoolToErrorBrushConverter x:Key="BoolToErrorBrushConverter"/>
+        
+        <!-- The theme resources will be added here dynamically by the ThemeManager -->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,257 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:EHRp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="700"
+        x:Class="EHRp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="EHRp - Electronic Health Records"
+        MinWidth="800" MinHeight="600">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Window.Resources>
+        <vm:BoolToWidthConverter x:Key="BoolToWidthConverter" CollapsedWidth="0" ExpandedWidth="220"/>
+        <vm:BoolToStringConverter x:Key="SidebarToggleConverter" TrueValue="&gt;" FalseValue="&lt;"/>
+        <vm:AlwaysVisibleConverter x:Key="AlwaysVisibleConverter"/>
+        <vm:StringEqualityToBrushConverter x:Key="StringEqualityToBrushConverter"/>
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="Button.menuButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,2"/>
+            <Setter Property="CornerRadius" Value="0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+        <Style Selector="Button.menuButton:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#2a3f54"/>
+            <Setter Property="TextBlock.Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.menuButton:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#1f2f3d"/>
+            <Setter Property="TextBlock.Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.menuButton.selected">
+            <Setter Property="Background" Value="#2a3f54"/>
+            <Setter Property="TextBlock.Foreground" Value="White"/>
+            <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid>
+        <!-- Login View -->
+        <ContentControl Content="{Binding CurrentViewModel}" 
+                        IsVisible="{Binding IsLoggedIn, Converter={x:Static BoolConverters.Not}}"/>
+
+        <!-- Main Application Layout (visible when logged in) -->
+        <Grid IsVisible="{Binding IsLoggedIn}" ColumnDefinitions="Auto,*">
+            <!-- Sidebar -->
+            <Border Grid.Column="0" 
+                    Background="{DynamicResource ThemePrimaryBrush}" 
+                    Width="{Binding IsSidebarCollapsed, Converter={StaticResource BoolToWidthConverter}}"
+                    Padding="0">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <!-- App Logo/Header -->
+                    <Border Grid.Row="0" 
+                            Background="{DynamicResource ThemeSecondaryBrush}" 
+                            Padding="15,20">
+                        <StackPanel>
+                            <TextBlock Text="EHRp" 
+                                       Foreground="White" 
+                                       FontSize="24" 
+                                       FontWeight="Bold" 
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="Electronic Health Records" 
+                                       Foreground="#AAAAAA" 
+                                       FontSize="12" 
+                                       HorizontalAlignment="Center" 
+                                       IsVisible="{Binding IsSidebarCollapsed, Converter={x:Static BoolConverters.Not}}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Menu Items -->
+                    <ScrollViewer Grid.Row="1" Margin="0,10,0,0">
+                        <StackPanel>
+                            <!-- Dashboard Button -->
+                            <Button Content="Dashboard" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Dashboard"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Dashboard}"/>
+                            
+                            <!-- Patients Button -->
+                            <Button Content="Patients" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Patients"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Patients}"/>
+                            
+                            <!-- Calendar Button -->
+                            <Button Content="Calendar" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Calendar"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Calendar}"/>
+                            
+                            <!-- Appointments Button -->
+                            <Button Content="Appointments" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Appointments"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Appointments}"/>
+                            
+                            <!-- Prescriptions Button -->
+                            <Button Content="Prescriptions" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Prescriptions"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Prescriptions}"/>
+                            
+                            <!-- Settings Button -->
+                            <Button Content="Settings" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Settings"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Settings}"/>
+                            
+                            <!-- Maintenance Button -->
+                            <Button Content="Maintenance" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Maintenance"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Maintenance}"/>
+                            
+
+                            <!-- Exit Button -->
+                            <Button Content="Exit" 
+                                    Command="{Binding NavigateToMenuItemCommand}" 
+                                    CommandParameter="Exit"
+                                    Classes="menuButton"
+                                    Background="{Binding SelectedMenuItem, Converter={StaticResource StringEqualityToBrushConverter}, ConverterParameter=Exit}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <!-- User Info & Logout -->
+                    <Border Grid.Row="2" 
+                            Background="{DynamicResource ThemeSecondaryBrush}" 
+                            Padding="15">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" 
+                                        Spacing="10" 
+                                        IsVisible="{Binding IsSidebarCollapsed, Converter={x:Static BoolConverters.Not}}">
+                                <Ellipse Width="40" 
+                                         Height="40" 
+                                         Fill="#3498db"/>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding CurrentUser.FullName}" 
+                                               Foreground="White" 
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding CurrentUser.Email}" 
+                                               Foreground="#AAAAAA" 
+                                               FontSize="12"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <Button Command="{Binding LogoutCommand}" 
+                                    HorizontalAlignment="Stretch" 
+                                    HorizontalContentAlignment="Center"
+                                    Background="#E74C3C" 
+                                    Foreground="White" 
+                                    Margin="0,10,0,0" 
+                                    Padding="10,5">
+                                <TextBlock Text="Logout" 
+                                           Foreground="White"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Column="1" RowDefinitions="Auto,*">
+                <!-- Top Bar -->
+                <Border Grid.Row="0" 
+                        Background="{DynamicResource ThemeBackgroundBrush}" 
+                        BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                        BorderThickness="0,0,0,1" 
+                        Padding="15,10">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <!-- Toggle Sidebar Button -->
+                        <Button Grid.Column="0" 
+                                Command="{Binding ToggleSidebarCommand}" 
+                                Background="Transparent" 
+                                BorderThickness="0">
+                            <TextBlock FontSize="20" 
+                                     FontWeight="Bold">
+                                <TextBlock.Text>
+                                    <Binding Path="IsSidebarCollapsed">
+                                        <Binding.Converter>
+                                            <vm:BoolToStringConverter TrueValue="&gt;" FalseValue="&lt;"/>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </Button>
+                        
+                        <!-- Page Title -->
+                        <TextBlock Grid.Column="1" 
+                                   Text="{Binding SelectedMenuItem}" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+                        
+                        <!-- User Info (small) -->
+                        <StackPanel Grid.Column="2" 
+                                    Orientation="Horizontal" 
+                                    Spacing="10">
+                            <TextBlock Text="{Binding CurrentUser.FullName}" 
+                                       VerticalAlignment="Center"/>
+                            <Ellipse Width="30" 
+                                     Height="30" 
+                                     Fill="#3498db"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Content Area -->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Status Message -->
+                    <Border Grid.Row="0" 
+                            Background="{DynamicResource ThemeErrorBrush}" 
+                            IsVisible="{Binding IsStatusVisible}"
+                            Padding="15,10"
+                            Margin="5,5,5,0"
+                            CornerRadius="4">
+                        <TextBlock Text="{Binding StatusMessage}" 
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   FontWeight="SemiBold"/>
+                    </Border>
+                    
+                    <!-- Main Content -->
+                    <Border Grid.Row="1" 
+                            Background="{DynamicResource ThemeBackgroundBrush}">
+                        <ContentControl Content="{Binding CurrentViewModel}" 
+                                        Margin="20"/>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

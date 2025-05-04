@@ -1,0 +1,196 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:EHRp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="700"
+        x:Class="EHRp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="EHRp - Electronic Health Records"
+        MinWidth="800" MinHeight="600">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Window.Resources>
+        <vm:BoolToWidthConverter x:Key="BoolToWidthConverter" CollapsedWidth="60" ExpandedWidth="220"/>
+        <vm:BoolToStringConverter x:Key="BoolToStringConverter" TrueValue="⬅" FalseValue="Logout"/>
+        <vm:AlwaysVisibleConverter x:Key="AlwaysVisibleConverter"/>
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="Button.menuButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,2"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="Button.menuButton:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#2a3f54"/>
+        </Style>
+        <Style Selector="Button.menuButton:pressed /template/ ContentPresenter">
+            <Setter Property="Background" Value="#1f2f3d"/>
+        </Style>
+        <Style Selector="Button.menuButton.selected">
+            <Setter Property="Background" Value="#2a3f54"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid>
+        <!-- Login View -->
+        <ContentControl Content="{Binding CurrentViewModel}" 
+                        IsVisible="{Binding IsLoggedIn, Converter={x:Static BoolConverters.Not}}"/>
+
+        <!-- Main Application Layout (visible when logged in) -->
+        <Grid IsVisible="{Binding IsLoggedIn}" ColumnDefinitions="Auto,*">
+            <!-- Sidebar -->
+            <Border Grid.Column="0" 
+                    Background="{DynamicResource ThemePrimaryBrush}" 
+                    Width="{Binding IsSidebarCollapsed, Converter={StaticResource BoolToWidthConverter}}"
+                    Padding="0">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <!-- App Logo/Header -->
+                    <Border Grid.Row="0" 
+                            Background="{DynamicResource ThemeSecondaryBrush}" 
+                            Padding="15,20">
+                        <StackPanel>
+                            <TextBlock Text="EHRp" 
+                                       Foreground="White" 
+                                       FontSize="24" 
+                                       FontWeight="Bold" 
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="Electronic Health Records" 
+                                       Foreground="#AAAAAA" 
+                                       FontSize="12" 
+                                       HorizontalAlignment="Center" 
+                                       IsVisible="{Binding IsSidebarCollapsed, Converter={x:Static BoolConverters.Not}}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Menu Items -->
+                    <ScrollViewer Grid.Row="1" Margin="0,10,0,0">
+                        <StackPanel>
+                            <ListBox ItemsSource="{Binding MenuItems}"
+                                     SelectedItem="{Binding SelectedMenuItem}"
+                                     Background="Transparent"
+                                     Padding="0"
+                                     Margin="0">
+                                <ListBox.Styles>
+                                    <Style Selector="ListBoxItem">
+                                        <Setter Property="Padding" Value="15,10"/>
+                                        <Setter Property="Margin" Value="0,2"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                    </Style>
+                                    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+                                        <Setter Property="Background" Value="#2a3f54"/>
+                                    </Style>
+                                    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+                                        <Setter Property="Background" Value="#2a3f54"/>
+                                    </Style>
+                                </ListBox.Styles>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Spacing="15">
+                                            <TextBlock Text="📊" 
+                                                       Foreground="White" 
+                                                       VerticalAlignment="Center"
+                                                       FontSize="16"/>
+                                            <TextBlock Text="{Binding}" 
+                                                       Foreground="White" 
+                                                       VerticalAlignment="Center"
+                                                       IsVisible="{Binding Converter={StaticResource AlwaysVisibleConverter}}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <!-- User Info & Logout -->
+                    <Border Grid.Row="2" 
+                            Background="{DynamicResource ThemeSecondaryBrush}" 
+                            Padding="15">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" 
+                                        Spacing="10" 
+                                        IsVisible="{Binding IsSidebarCollapsed, Converter={x:Static BoolConverters.Not}}">
+                                <Ellipse Width="40" 
+                                         Height="40" 
+                                         Fill="#3498db"/>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding CurrentUser.FullName}" 
+                                               Foreground="White" 
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding CurrentUser.Email}" 
+                                               Foreground="#AAAAAA" 
+                                               FontSize="12"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <Button Command="{Binding LogoutCommand}" 
+                                    HorizontalAlignment="Stretch" 
+                                    HorizontalContentAlignment="Center"
+                                    Background="#E74C3C" 
+                                    Foreground="White" 
+                                    Margin="0,10,0,0" 
+                                    Padding="10,5">
+                                <TextBlock Text="{Binding IsSidebarCollapsed, 
+                                           Converter={StaticResource BoolToStringConverter}}" 
+                                           Foreground="White"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Column="1" RowDefinitions="Auto,*">
+                <!-- Top Bar -->
+                <Border Grid.Row="0" 
+                        Background="White" 
+                        BorderBrush="#EEEEEE" 
+                        BorderThickness="0,0,0,1" 
+                        Padding="15,10">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <!-- Toggle Sidebar Button -->
+                        <Button Grid.Column="0" 
+                                Command="{Binding ToggleSidebarCommand}" 
+                                Background="Transparent" 
+                                BorderThickness="0">
+                            <TextBlock Text="☰" FontSize="20"/>
+                        </Button>
+                        
+                        <!-- Page Title -->
+                        <TextBlock Grid.Column="1" 
+                                   Text="{Binding SelectedMenuItem}" 
+                                   FontSize="20" 
+                                   FontWeight="SemiBold" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+                        
+                        <!-- User Info (small) -->
+                        <StackPanel Grid.Column="2" 
+                                    Orientation="Horizontal" 
+                                    Spacing="10">
+                            <TextBlock Text="{Binding CurrentUser.FullName}" 
+                                       VerticalAlignment="Center"/>
+                            <Ellipse Width="30" 
+                                     Height="30" 
+                                     Fill="#3498db"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Content Area -->
+                <ContentControl Grid.Row="1" 
+                                Content="{Binding CurrentViewModel}" 
+                                Margin="20"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
