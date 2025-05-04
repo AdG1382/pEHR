@@ -127,3 +127,4 @@ D:\pEHR\EHRp\bin\Debug\net8.0\DynamicData.dll
 D:\pEHR\EHRp\bin\Debug\net8.0\ReactiveUI.dll
 D:\pEHR\EHRp\bin\Debug\net8.0\Splat.dll
 D:\pEHR\EHRp\bin\Debug\net8.0\System.Reactive.dll
+D:\pEHR\EHRp\obj\Debug\net8.0\EHRp.sourcelink.json

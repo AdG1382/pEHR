@@ -135,7 +135,7 @@
                     Margin="0,0,0,20"
                     IsVisible="{Binding StatusMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
                 <TextBlock Text="{Binding StatusMessage}" 
-                           Foreground="{Binding IsStatusSuccess, Converter={StaticResource BoolToColorConverter}, ConverterParameter='Green;Red'}" 
+                           Foreground="{Binding IsStatusSuccess, Converter={StaticResource BoolToColorConverter}, ConverterParameter=Green;Red}" 
                            HorizontalAlignment="Center"/>
             </Border>
         </StackPanel>

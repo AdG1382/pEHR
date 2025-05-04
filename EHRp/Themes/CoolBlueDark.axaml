@@ -185,4 +185,45 @@
     <Style Selector="TextBlock">
         <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
     </Style>
+    
+    <!-- DatePicker and Calendar specific styles -->
+    <Style Selector="DatePicker">
+        <Setter Property="Background" Value="#1a2530"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="DatePicker /template/ TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="DatePicker /template/ Button#FlyoutButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="Calendar">
+        <Setter Property="Background" Value="#1a2530"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="Calendar /template/ CalendarItem">
+        <Setter Property="Background" Value="#1a2530"/>
+    </Style>
+    
+    <Style Selector="Calendar /template/ CalendarItem /template/ Grid">
+        <Setter Property="Background" Value="#1a2530"/>
+    </Style>
+    
+    <Style Selector="Calendar /template/ Button">
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="CalendarDayButton">
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="FlyoutPresenter">
+        <Setter Property="Background" Value="#1a2530"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+    </Style>
 </Styles>

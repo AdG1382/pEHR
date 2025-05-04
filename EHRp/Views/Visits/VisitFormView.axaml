@@ -74,15 +74,7 @@
                                     SelectedDate="{Binding VisitDate}"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
-                                    Padding="10,8"
-                                    Background="White">
-                            <DatePicker.Styles>
-                                <Style Selector="DatePicker:pointerover /template/ Border#Background">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </DatePicker.Styles>
+                                    Padding="10,8">
                         </DatePicker>
                         
                         <!-- Visit Type -->

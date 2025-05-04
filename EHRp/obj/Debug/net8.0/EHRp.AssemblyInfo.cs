@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EHRp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43051bc20efeebeb9a3bd6c05ee04b66b3bce03c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EHRp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EHRp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

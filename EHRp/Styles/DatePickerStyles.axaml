@@ -1,0 +1,130 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- DatePicker Styles -->
+    <Style Selector="DatePicker">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="8,4"/>
+    </Style>
+
+    <Style Selector="DatePicker:pointerover /template/ Border#Background">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+
+    <Style Selector="DatePicker:focus /template/ Border#Background">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+
+    <Style Selector="DatePicker /template/ Button#FlyoutButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="DatePicker /template/ TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <!-- Calendar Styles -->
+    <Style Selector="Calendar">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ Button:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ThemeHoverBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ Button:pressed">
+        <Setter Property="Background" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ CalendarItem">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ CalendarItem /template/ Grid">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ThemeHoverBrush}"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton:selected">
+        <Setter Property="Background" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton:today">
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton:blackout">
+        <Setter Property="Opacity" Value="0.4"/>
+    </Style>
+    
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton:inactive">
+        <Setter Property="Opacity" Value="0.6"/>
+    </Style>
+    
+    <Style Selector="Calendar /template/ CalendarItem /template/ CalendarDayButton:disabled">
+        <Setter Property="Opacity" Value="0.3"/>
+    </Style>
+
+    <!-- Flyout Presenter Styles -->
+    <Style Selector="FlyoutPresenter">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+    
+    
+    <!-- DatePickerPresenter Styles -->
+    <Style Selector="DatePickerPresenter">
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+    
+    <!-- Calendar Button Styles -->
+    <Style Selector="CalendarButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextBrush}"/>
+    </Style>
+    
+    <Style Selector="CalendarButton:pointerover">
+        <Setter Property="Background" Value="{DynamicResource ThemeHoverBrush}"/>
+    </Style>
+    
+    <Style Selector="CalendarButton:pressed">
+        <Setter Property="Background" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+</Styles>

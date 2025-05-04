@@ -260,6 +260,22 @@ namespace EHRp.Services
                 // Update the Background property if it's bound to a DynamicResource
                 UpdateDynamicResourceBindings(control);
                 
+                // Special handling for DatePicker and Calendar controls
+                if (control is DatePicker datePicker)
+                {
+                    // Force update of DatePicker
+                    datePicker.InvalidateVisual();
+                    
+                    // Try to find and update the flyout content
+                    var flyout = datePicker.GetVisualDescendants()
+                        .FirstOrDefault(x => x is Popup) as Popup;
+                    
+                    if (flyout != null && flyout.Child is Control flyoutContent)
+                    {
+                        UpdateControlRecursively(flyoutContent);
+                    }
+                }
+                
                 // Recursively update child controls
                 if (control is Panel panel)
                 {
@@ -478,6 +494,9 @@ namespace EHRp.Services
                             if (window.Content is Control content)
                             {
                                 UpdateControlRecursively(content);
+                                
+                                // Specifically refresh DatePicker controls
+                                RefreshDatePickerControls(content);
                             }
                             
                             _logger.LogDebug("Refreshed theme on window: {WindowType}", window.GetType().Name);
@@ -496,6 +515,55 @@ namespace EHRp.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error refreshing theme on all windows");
+            }
+        }
+        
+        /// <summary>
+        /// Specifically refreshes DatePicker controls to ensure they use the current theme
+        /// </summary>
+        private void RefreshDatePickerControls(Control rootControl)
+        {
+            try
+            {
+                // Find all DatePicker controls in the visual tree
+                foreach (var datePicker in rootControl.GetVisualDescendants().OfType<DatePicker>())
+                {
+                    try
+                    {
+                        // Force update of the DatePicker
+                        datePicker.InvalidateVisual();
+                        
+                        // Update the background and foreground
+                        if (datePicker.Background is SolidColorBrush)
+                        {
+                            // Re-apply the background from the theme
+                            if (Application.Current.Resources.TryGetResource("ThemeBackgroundBrush", null, out var backgroundBrush))
+                            {
+                                datePicker.SetValue(DatePicker.BackgroundProperty, backgroundBrush);
+                            }
+                        }
+                        
+                        if (datePicker.Foreground is SolidColorBrush)
+                        {
+                            // Re-apply the foreground from the theme
+                            if (Application.Current.Resources.TryGetResource("ThemeTextBrush", null, out var textBrush))
+                            {
+                                datePicker.SetValue(DatePicker.ForegroundProperty, textBrush);
+                            }
+                        }
+                        
+                        _logger.LogDebug("Refreshed DatePicker in {Parent}", 
+                            datePicker.Parent?.GetType().Name ?? "unknown parent");
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Error refreshing DatePicker");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in RefreshDatePickerControls");
             }
         }
     }

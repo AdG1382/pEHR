@@ -190,24 +190,7 @@
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
                                     Padding="10,8"
-                                    Margin="0,0,0,10"
-                                    Background="White">
-                            <DatePicker.Styles>
-                                <Style Selector="DatePicker:pointerover /template/ Border#Background">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="DatePicker /template/ Button#FlyoutButton">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Style>
-                                <Style Selector="CalendarDatePicker /template/ Button#FlyoutButton">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Style>
-                                <Style Selector="FlyoutPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                </Style>
-                            </DatePicker.Styles>
+                                    Margin="0,0,0,10">
                         </DatePicker>
                         
                         <!-- End Date -->
@@ -220,24 +203,7 @@
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
                                     Padding="10,8"
-                                    Margin="0,0,0,10"
-                                    Background="White">
-                            <DatePicker.Styles>
-                                <Style Selector="DatePicker:pointerover /template/ Border#Background">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="DatePicker /template/ Button#FlyoutButton">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Style>
-                                <Style Selector="CalendarDatePicker /template/ Button#FlyoutButton">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Style>
-                                <Style Selector="FlyoutPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                </Style>
-                            </DatePicker.Styles>
+                                    Margin="0,0,0,10">
                         </DatePicker>
                         
                         <!-- Notes -->

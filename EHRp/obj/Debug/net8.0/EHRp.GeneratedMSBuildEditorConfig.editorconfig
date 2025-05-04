@@ -22,6 +22,9 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [D:/pEHR/EHRp/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/pEHR/EHRp/Styles/DatePickerStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/pEHR/EHRp/Themes/CalmingGreenDark.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
