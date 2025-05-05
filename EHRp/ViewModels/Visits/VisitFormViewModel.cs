@@ -17,8 +17,25 @@ namespace EHRp.ViewModels.Visits
         [ObservableProperty]
         private string _patientName = string.Empty;
         
-        [ObservableProperty]
         private DateTime _visitDate = DateTime.Now;
+        
+        /// <summary>
+        /// Gets or sets the visit date
+        /// </summary>
+        public DateTime VisitDate
+        {
+            get => _visitDate;
+            set => SetProperty(ref _visitDate, value);
+        }
+        
+        /// <summary>
+        /// Gets or sets the visit date as DateTimeOffset (for DatePicker binding)
+        /// </summary>
+        public DateTimeOffset VisitDateOffset
+        {
+            get => new DateTimeOffset(VisitDate);
+            set => VisitDate = value.DateTime;
+        }
         
         [ObservableProperty]
         private string _visitType = string.Empty;
@@ -68,6 +85,9 @@ namespace EHRp.ViewModels.Visits
             VisitType = string.Empty;
             VisitDuration = 30;
             Notes = string.Empty;
+            
+            // Notify property changed for VisitDateOffset
+            OnPropertyChanged(nameof(VisitDateOffset));
             
             // Clear status message
             StatusMessage = string.Empty;

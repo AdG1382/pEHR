@@ -10,6 +10,8 @@
     <Design.DataContext>
         <vm:AddPatientViewModel/>
     </Design.DataContext>
+    
+    <!-- We're removing the local styles since they're now defined globally in the theme files -->
 
     <Grid RowDefinitions="Auto,*,Auto">
         <TextBlock Grid.Row="0" 
@@ -17,10 +19,11 @@
                    FontSize="24" 
                    FontWeight="Bold" 
                    Margin="20,15"
+                   Foreground="{DynamicResource ThemeForegroundBrush}"
                    HorizontalAlignment="Center"/>
         
         <ScrollViewer Grid.Row="1" Margin="20">
-            <Border Background="White" 
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
                     CornerRadius="10" 
                     BoxShadow="0 2 10 0 #20000000"
                     Padding="25">
@@ -42,27 +45,15 @@
                                    Text="First Name:" 
                                    VerticalAlignment="Center"
                                    Margin="0,0,15,0"
+                                   Foreground="{DynamicResource ThemeForegroundBrush}"
                                    FontWeight="Medium"/>
                         <TextBox Grid.Row="0" Grid.Column="1" 
                                  Text="{Binding FirstName}" 
                                  Watermark="Enter first name"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                         
                         <!-- Last Name -->
                         <TextBlock Grid.Row="1" Grid.Column="0" 
@@ -75,21 +66,8 @@
                                  Watermark="Enter last name"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                         
                         <!-- Date of Birth -->
                         <TextBlock Grid.Row="2" Grid.Column="0" 
@@ -98,12 +76,13 @@
                                    Margin="0,20,15,0"
                                    FontWeight="Medium"/>
                         <DatePicker Grid.Row="2" Grid.Column="1" 
-                                    SelectedDate="{Binding DateOfBirth}"
+                                    SelectedDate="{Binding DateOfBirthOffset}"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
                                     Padding="10,8"
-                                    Margin="0,0,0,10">
-                        </DatePicker>
+                                    Margin="0,0,0,10"
+                                    Background="{DynamicResource ThemeTextboxBrush}"
+                                    Foreground="{DynamicResource ThemeTextboxForegroundBrush}"/>
                         
                         <!-- Gender (New Field) -->
                         <TextBlock Grid.Row="3" Grid.Column="0" 
@@ -116,30 +95,12 @@
                                   HorizontalAlignment="Stretch"
                                   Padding="10,8"
                                   Margin="0,0,0,10"
-                                  Background="White">
+                                  Background="{DynamicResource ThemeTextboxBrush}"
+                                  Foreground="{DynamicResource ThemeTextboxForegroundBrush}">
                             <ComboBoxItem>Male</ComboBoxItem>
                             <ComboBoxItem>Female</ComboBoxItem>
                             <ComboBoxItem>Other</ComboBoxItem>
                             <ComboBoxItem>Prefer not to say</ComboBoxItem>
-                            <ComboBox.Styles>
-                                <Style Selector="ComboBox:pointerover /template/ Border#Background">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="ComboBox /template/ ContentPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                </Style>
-                                <Style Selector="ComboBoxItem">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Style>
-                                <Style Selector="ComboBoxItem:pointerover /template/ ContentPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlHighlightListLowBrush}"/>
-                                </Style>
-                                <Style Selector="ComboBoxItem:selected /template/ ContentPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlHighlightListAccentLowBrush}"/>
-                                </Style>
-                            </ComboBox.Styles>
                         </ComboBox>
                         
                         <!-- Email -->
@@ -153,21 +114,8 @@
                                  Watermark="Enter email address"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                         
                         <!-- Phone -->
                         <TextBlock Grid.Row="5" Grid.Column="0" 
@@ -180,21 +128,8 @@
                                  Watermark="Enter phone number"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                         
                         <!-- Address -->
                         <TextBlock Grid.Row="6" Grid.Column="0" 
@@ -210,21 +145,8 @@
                                  TextWrapping="Wrap"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                         
                         <!-- Notes -->
                         <TextBlock Grid.Row="7" Grid.Column="0" 
@@ -239,21 +161,8 @@
                                  AcceptsReturn="True"
                                  TextWrapping="Wrap"
                                  Padding="10,8"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                     </Grid>
                 </StackPanel>
             </Border>
@@ -267,31 +176,15 @@
                     Spacing="15">
             <Button Content="Save" 
                     Command="{Binding SavePatientCommand}"
-                    Background="#4CAF50"
-                    Foreground="White"
+                    Classes="save-button"
                     Padding="25,12"
-                    FontWeight="SemiBold">
-                <Button.Styles>
-                    <Style Selector="Button:pointerover /template/ ContentPresenter">
-                        <Setter Property="Background" Value="#388E3C"/>
-                        <Setter Property="Foreground" Value="White"/>
-                    </Style>
-                </Button.Styles>
-            </Button>
+                    FontWeight="SemiBold"/>
             
             <Button Content="Cancel" 
                     Command="{Binding CancelCommand}"
-                    Background="#F44336"
-                    Foreground="White"
+                    Classes="cancel-button"
                     Padding="25,12"
-                    FontWeight="SemiBold">
-                <Button.Styles>
-                    <Style Selector="Button:pointerover /template/ ContentPresenter">
-                        <Setter Property="Background" Value="#D32F2F"/>
-                        <Setter Property="Foreground" Value="White"/>
-                    </Style>
-                </Button.Styles>
-            </Button>
+                    FontWeight="SemiBold"/>
         </StackPanel>
     </Grid>
 </UserControl>

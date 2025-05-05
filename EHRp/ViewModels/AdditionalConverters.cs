@@ -1,7 +1,10 @@
 using System;
 using System.Globalization;
+using Avalonia;
+using Avalonia.Data;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
+using System.Collections.Generic;
 
 namespace EHRp.ViewModels
 {
@@ -142,6 +145,40 @@ namespace EHRp.ViewModels
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+    }
+    
+    public class EqualityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value == null || parameter == null)
+                return false;
+                
+            // Handle numeric comparisons
+            if (value is int intValue && int.TryParse(parameter.ToString(), out int intParam))
+            {
+                return intValue == intParam;
+            }
+            
+            // Handle string comparisons
+            if (value is string stringValue && parameter is string stringParam)
+            {
+                return stringValue.Equals(stringParam, StringComparison.OrdinalIgnoreCase);
+            }
+            
+            // Default comparison
+            return value.Equals(parameter);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool boolValue && boolValue && parameter != null)
+            {
+                return parameter;
+            }
+            
+            return Avalonia.AvaloniaProperty.UnsetValue;
         }
     }
 }

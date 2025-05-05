@@ -29,11 +29,55 @@ namespace EHRp.ViewModels.Prescriptions
         [ObservableProperty]
         private string _prescriptionType = "Regular";
         
-        [ObservableProperty]
-        private DateTime _startDate = DateTime.Now;
+        /// <summary>
+        /// Gets the available prescription type options
+        /// </summary>
+        public string[] PrescriptionTypeOptions { get; } = new[]
+        {
+            "Regular",
+            "Controlled Substance",
+            "Over-the-counter",
+            "Refill"
+        };
         
-        [ObservableProperty]
+        private DateTime _startDate = DateTime.Now;
         private DateTime _endDate = DateTime.Now.AddDays(30);
+        
+        /// <summary>
+        /// Gets or sets the start date
+        /// </summary>
+        public DateTime StartDate
+        {
+            get => _startDate;
+            set => SetProperty(ref _startDate, value);
+        }
+        
+        /// <summary>
+        /// Gets or sets the start date as DateTimeOffset (for DatePicker binding)
+        /// </summary>
+        public DateTimeOffset StartDateOffset
+        {
+            get => new DateTimeOffset(StartDate);
+            set => StartDate = value.DateTime;
+        }
+        
+        /// <summary>
+        /// Gets or sets the end date
+        /// </summary>
+        public DateTime EndDate
+        {
+            get => _endDate;
+            set => SetProperty(ref _endDate, value);
+        }
+        
+        /// <summary>
+        /// Gets or sets the end date as DateTimeOffset (for DatePicker binding)
+        /// </summary>
+        public DateTimeOffset EndDateOffset
+        {
+            get => new DateTimeOffset(EndDate);
+            set => EndDate = value.DateTime;
+        }
         
         [ObservableProperty]
         private string _notes = string.Empty;
@@ -80,6 +124,10 @@ namespace EHRp.ViewModels.Prescriptions
             StartDate = DateTime.Now;
             EndDate = DateTime.Now.AddDays(30);
             Notes = string.Empty;
+            
+            // Notify property changed for date offset properties
+            OnPropertyChanged(nameof(StartDateOffset));
+            OnPropertyChanged(nameof(EndDateOffset));
             
             // Clear status message
             StatusMessage = string.Empty;

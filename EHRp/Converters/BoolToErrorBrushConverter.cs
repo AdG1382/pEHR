@@ -22,10 +22,24 @@ namespace EHRp.Converters
         {
             if (value is bool isError && isError)
             {
-                return new SolidColorBrush(Color.Parse("#F44336")); // Red for errors
+                // Try to get the ThemeErrorBrush from application resources
+                if (Avalonia.Application.Current?.Resources.TryGetResource("ThemeErrorBrush", null, out var errorBrush) == true)
+                {
+                    return errorBrush;
+                }
+                
+                // Fallback to hardcoded color if resource not found
+                return new SolidColorBrush(Color.Parse("#F44336"));
             }
             
-            return new SolidColorBrush(Color.Parse("#4CAF50")); // Green for success
+            // Try to get the ThemeSuccessBrush from application resources
+            if (Avalonia.Application.Current?.Resources.TryGetResource("ThemeSuccessBrush", null, out var successBrush) == true)
+            {
+                return successBrush;
+            }
+            
+            // Fallback to hardcoded color if resource not found
+            return new SolidColorBrush(Color.Parse("#4CAF50"));
         }
         
         /// <summary>

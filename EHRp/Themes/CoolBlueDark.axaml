@@ -3,13 +3,13 @@
 
     <Styles.Resources>
         <ResourceDictionary>
+            <!-- Base Colors -->
             <Color x:Key="ThemePrimaryColor">#3498db</Color>
             <Color x:Key="ThemeSecondaryColor">#2980b9</Color>
             <Color x:Key="ThemeAccentColor">#1abc9c</Color>
             <Color x:Key="ThemeBackgroundColor">#2c3e50</Color>
             <Color x:Key="ThemeButtonColor">#3498db</Color>
             <Color x:Key="ThemeTextColor">#ecf0f1</Color>
-
             <Color x:Key="ThemeHoverColor">#2980b9</Color>
             <Color x:Key="ThemeBorderColor">#34495e</Color>
             <Color x:Key="ThemeHighlightColor">#34495e</Color>
@@ -17,11 +17,20 @@
             <Color x:Key="ThemeSuccessColor">#2ecc71</Color>
             <Color x:Key="ThemeWarningColor">#f39c12</Color>
             <Color x:Key="ThemeInfoColor">#3498db</Color>
-
+            
+            <!-- Control-specific Colors -->
+            <Color x:Key="ThemeTextboxBackgroundColor">#1a2530</Color>
+            <Color x:Key="ThemeTextboxForegroundColor">#ecf0f1</Color>
+            <Color x:Key="ThemeLabelBackgroundColor">#2c3e50</Color>
+            <Color x:Key="ThemeLabelForegroundColor">#ecf0f1</Color>
+            <Color x:Key="ThemeControlBorderColor">#34495e</Color>
+            
+            <!-- Base Brushes -->
             <SolidColorBrush x:Key="ThemePrimaryBrush" Color="{StaticResource ThemePrimaryColor}"/>
             <SolidColorBrush x:Key="ThemeSecondaryBrush" Color="{StaticResource ThemeSecondaryColor}"/>
             <SolidColorBrush x:Key="ThemeAccentBrush" Color="{StaticResource ThemeAccentColor}"/>
             <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="{StaticResource ThemeBackgroundColor}"/>
+            <SolidColorBrush x:Key="ThemeForegroundBrush" Color="{StaticResource ThemeTextColor}"/>
             <SolidColorBrush x:Key="ThemeButtonBrush" Color="{StaticResource ThemeButtonColor}"/>
             <SolidColorBrush x:Key="ThemeTextBrush" Color="{StaticResource ThemeTextColor}"/>
             <SolidColorBrush x:Key="ThemeHoverBrush" Color="{StaticResource ThemeHoverColor}"/>
@@ -31,6 +40,14 @@
             <SolidColorBrush x:Key="ThemeSuccessBrush" Color="{StaticResource ThemeSuccessColor}"/>
             <SolidColorBrush x:Key="ThemeWarningBrush" Color="{StaticResource ThemeWarningColor}"/>
             <SolidColorBrush x:Key="ThemeInfoBrush" Color="{StaticResource ThemeInfoColor}"/>
+            
+            <!-- Control-specific Brushes -->
+            <SolidColorBrush x:Key="ThemeTextboxBrush" Color="{StaticResource ThemeTextboxBackgroundColor}"/>
+            <SolidColorBrush x:Key="ThemeTextboxForegroundBrush" Color="{StaticResource ThemeTextboxForegroundColor}"/>
+            <SolidColorBrush x:Key="ThemeLabelBrush" Color="{StaticResource ThemeLabelBackgroundColor}"/>
+            <SolidColorBrush x:Key="ThemeLabelForegroundBrush" Color="{StaticResource ThemeLabelForegroundColor}"/>
+            <SolidColorBrush x:Key="ThemeControlBorderBrush" Color="{StaticResource ThemeControlBorderColor}"/>
+            <SolidColorBrush x:Key="ThemeBorderHighlightBrush" Color="{StaticResource ThemePrimaryColor}"/>
         </ResourceDictionary>
     </Styles.Resources>
 
@@ -52,31 +69,49 @@
     </Style>
 
     <Style Selector="TextBox">
-        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
-        <Setter Property="Background" Value="#1a2530"/>
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
-        <Setter Property="CaretBrush" Value="{StaticResource ThemePrimaryBrush}"/>
-        <Setter Property="SelectionBrush" Value="{StaticResource ThemeHighlightBrush}"/>
-        <Setter Property="SelectionForegroundBrush" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeControlBorderBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextboxForegroundBrush}"/>
+        <Setter Property="CaretBrush" Value="{DynamicResource ThemePrimaryBrush}"/>
+        <Setter Property="SelectionBrush" Value="{DynamicResource ThemeHighlightBrush}"/>
+        <Setter Property="SelectionForegroundBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
         <Setter Property="Padding" Value="8,4"/>
         <Setter Property="CornerRadius" Value="4"/>
     </Style>
 
     <Style Selector="TextBox:focus">
-        <Setter Property="BorderBrush" Value="{StaticResource ThemePrimaryBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+    </Style>
+    
+    <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+    </Style>
+    
+    <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
     <Style Selector="ComboBox">
-        <Setter Property="Background" Value="#1a2530"/>
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ThemeBorderBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextboxForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeControlBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="8,4"/>
         <Setter Property="CornerRadius" Value="4"/>
     </Style>
 
     <Style Selector="ComboBox:focus">
-        <Setter Property="BorderBrush" Value="{StaticResource ThemePrimaryBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+    </Style>
+    
+    <Style Selector="ComboBox:pointerover /template/ Border#Background">
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
     <Style Selector="CheckBox">
@@ -183,47 +218,66 @@
     </Style>
 
     <Style Selector="TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
     </Style>
     
     <!-- DatePicker and Calendar specific styles -->
     <Style Selector="DatePicker">
-        <Setter Property="Background" Value="#1a2530"/>
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextboxForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeControlBorderBrush}"/>
     </Style>
     
     <Style Selector="DatePicker /template/ TextBlock">
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextboxForegroundBrush}"/>
     </Style>
     
     <Style Selector="DatePicker /template/ Button#FlyoutButton">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextboxForegroundBrush}"/>
+    </Style>
+    
+    <Style Selector="DatePicker:pointerover /template/ Border#Background">
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
     
     <Style Selector="Calendar">
-        <Setter Property="Background" Value="#1a2530"/>
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
     </Style>
     
     <Style Selector="Calendar /template/ CalendarItem">
-        <Setter Property="Background" Value="#1a2530"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
     </Style>
     
     <Style Selector="Calendar /template/ CalendarItem /template/ Grid">
-        <Setter Property="Background" Value="#1a2530"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
     </Style>
     
     <Style Selector="Calendar /template/ Button">
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
     </Style>
     
     <Style Selector="CalendarDayButton">
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
     </Style>
     
     <Style Selector="FlyoutPresenter">
-        <Setter Property="Background" Value="#1a2530"/>
-        <Setter Property="Foreground" Value="{StaticResource ThemeTextBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+    </Style>
+    
+    <!-- NumericUpDown Style -->
+    <Style Selector="NumericUpDown">
+        <Setter Property="Foreground" Value="{DynamicResource ThemeTextboxForegroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeControlBorderBrush}"/>
+    </Style>
+    
+    <Style Selector="NumericUpDown:pointerover /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="{DynamicResource ThemeTextboxBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighlightBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
     </Style>
 </Styles>

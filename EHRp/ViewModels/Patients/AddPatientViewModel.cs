@@ -20,8 +20,25 @@ namespace EHRp.ViewModels.Patients
         [ObservableProperty]
         private string _lastName = string.Empty;
         
-        [ObservableProperty]
         private DateTime _dateOfBirth = DateTime.Now.AddYears(-30);
+        
+        /// <summary>
+        /// Gets or sets the date of birth
+        /// </summary>
+        public DateTime DateOfBirth
+        {
+            get => _dateOfBirth;
+            set => SetProperty(ref _dateOfBirth, value);
+        }
+        
+        /// <summary>
+        /// Gets or sets the date of birth as DateTimeOffset (for DatePicker binding)
+        /// </summary>
+        public DateTimeOffset DateOfBirthOffset
+        {
+            get => new DateTimeOffset(DateOfBirth);
+            set => DateOfBirth = value.DateTime;
+        }
         
         [ObservableProperty]
         private string _gender = "Male";
@@ -75,6 +92,9 @@ namespace EHRp.ViewModels.Patients
             Phone = string.Empty;
             Address = string.Empty;
             Notes = string.Empty;
+            
+            // Notify property changed for DateOfBirthOffset
+            OnPropertyChanged(nameof(DateOfBirthOffset));
             
             // Clear status message
             StatusMessage = string.Empty;

@@ -11,31 +11,31 @@
         <vm:LoginViewModel/>
     </Design.DataContext>
 
-    <Grid Background="#F5F5F5">
+    <Grid Background="{DynamicResource ThemeBackgroundBrush}">
         <Border Width="400" 
                 Height="450" 
-                Background="White" 
+                Background="{DynamicResource ThemeBackgroundBrush}" 
                 CornerRadius="10" 
                 BoxShadow="0 4 20 0 #20000000">
             <Grid RowDefinitions="Auto,*">
                 <!-- Header -->
                 <Border Grid.Row="0" 
-                        Background="#172D44" 
+                        Background="{DynamicResource ThemePrimaryBrush}" 
                         Padding="20" 
                         CornerRadius="10,10,0,0">
                     <StackPanel>
                         <TextBlock Text="EHRp" 
-                                   Foreground="White" 
+                                   Foreground="{DynamicResource ThemeForegroundBrush}" 
                                    FontSize="28" 
                                    FontWeight="Bold" 
                                    HorizontalAlignment="Center"/>
                         <TextBlock Text="Electronic Health Records - Personal Edition" 
-                                   Foreground="White" 
+                                   Foreground="{DynamicResource ThemeForegroundBrush}" 
                                    FontSize="14" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"/>
                         <TextBlock Text="Clinic Management System" 
-                                   Foreground="#AAAAAA" 
+                                   Foreground="{DynamicResource ThemeAccentBrush}" 
                                    FontSize="12" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"/>
@@ -62,55 +62,29 @@
                     
                     <!-- Username -->
                     <StackPanel Spacing="5">
-                        <TextBlock Text="Username" FontWeight="Medium"/>
+                        <TextBlock Text="Username" FontWeight="Medium" Foreground="{DynamicResource ThemeForegroundBrush}"/>
                         <TextBox Text="{Binding Username}" 
                                  Watermark="Enter your username" 
                                  Padding="10,8"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                     </StackPanel>
                     
                     <!-- Password -->
                     <StackPanel Spacing="5">
-                        <TextBlock Text="Password" FontWeight="Medium"/>
+                        <TextBlock Text="Password" FontWeight="Medium" Foreground="{DynamicResource ThemeForegroundBrush}"/>
                         <TextBox Text="{Binding Password}" 
                                  PasswordChar="•" 
                                  Watermark="Enter your password" 
                                  Padding="10,8"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                     </StackPanel>
                     
                     <!-- Forgot Password Link -->
                     <Button Content="Forgot Password?" 
                             Command="{Binding ForgotPasswordCommand}"
-                            Foreground="#2196F3"
+                            Foreground="{DynamicResource ThemeAccentBrush}"
                             Background="Transparent"
                             BorderThickness="0"
                             Cursor="Hand"
@@ -119,7 +93,7 @@
                         <Button.Styles>
                             <Style Selector="Button:pointerover /template/ ContentPresenter">
                                 <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="TextBlock.Foreground" Value="#1976D2"/>
+                                <Setter Property="TextBlock.Foreground" Value="{DynamicResource ThemePrimaryBrush}"/>
                                 <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
                             </Style>
                         </Button.Styles>
@@ -130,14 +104,14 @@
                             Content="Login" 
                             HorizontalAlignment="Stretch" 
                             HorizontalContentAlignment="Center" 
-                            Background="#2196F3" 
-                            Foreground="White" 
+                            Background="{DynamicResource ThemePrimaryBrush}" 
+                            Foreground="{DynamicResource ThemeForegroundBrush}" 
                             Padding="0,10" 
                             Margin="0,10,0,0">
                         <Button.Styles>
                             <Style Selector="Button:pointerover /template/ ContentPresenter">
-                                <Setter Property="Background" Value="#1976D2"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="{DynamicResource ThemeSecondaryBrush}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
                             </Style>
                         </Button.Styles>
                     </Button>
@@ -149,7 +123,8 @@
                     
                     <!-- Default Credentials Help -->
                     <TextBlock Text="Default login: doctor / password" 
-                               Foreground="#888888" 
+                               Foreground="{DynamicResource ThemeForegroundBrush}" 
+                               Opacity="0.7"
                                FontSize="12" 
                                HorizontalAlignment="Center" 
                                Margin="0,10,0,0"/>

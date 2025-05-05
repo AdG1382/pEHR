@@ -100,7 +100,7 @@ namespace EHRp.Services
                 if (!BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 {
                     _logger.LogWarning("Authentication failed: Invalid password for user: {Username}", username);
-                    return null;
+                    return null!; // Using null-forgiving operator to suppress warning
                 }
                     
                 // Update last login

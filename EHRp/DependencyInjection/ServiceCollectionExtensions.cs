@@ -77,6 +77,7 @@ namespace EHRp.DependencyInjection
             
             // Add new ViewModels for forms
             services.AddTransient<AddPatientViewModel>();
+            services.AddTransient<EHRp.ViewModels.Patients.PatientDetailViewModel>();
             services.AddTransient<VisitFormViewModel>();
             services.AddTransient<PrescriptionFormViewModel>();
 

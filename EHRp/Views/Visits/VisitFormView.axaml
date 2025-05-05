@@ -10,6 +10,8 @@
     <Design.DataContext>
         <vm:VisitFormViewModel/>
     </Design.DataContext>
+    
+    <!-- We're removing the local styles since they're now defined globally in the theme files -->
 
     <Grid RowDefinitions="Auto,*,Auto">
         <TextBlock Grid.Row="0" 
@@ -20,7 +22,7 @@
                    HorizontalAlignment="Center"/>
         
         <ScrollViewer Grid.Row="1" Margin="20">
-            <Border Background="White" 
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
                     CornerRadius="10" 
                     BoxShadow="0 2 10 0 #20000000"
                     Padding="25">
@@ -48,21 +50,8 @@
                                  Watermark="Enter patient name"
                                  IsReadOnly="{Binding PatientName, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                                  Padding="10,8"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                         
                         <!-- Visit Date -->
                         <TextBlock Grid.Row="1" Grid.Column="0" 
@@ -71,7 +60,7 @@
                                    Margin="0,20,15,0"
                                    FontWeight="Medium"/>
                         <DatePicker Grid.Row="1" Grid.Column="1" 
-                                    SelectedDate="{Binding VisitDate}"
+                                    SelectedDate="{Binding VisitDateOffset}"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
                                     Padding="10,8">
@@ -87,19 +76,13 @@
                                   SelectedItem="{Binding VisitType}"
                                   HorizontalAlignment="Stretch"
                                   Padding="10,8"
-                                  Background="White">
+                                  Background="{DynamicResource ThemeTextboxBrush}"
+                                  Foreground="{DynamicResource ThemeTextboxForegroundBrush}">
                             <ComboBoxItem>Check-up</ComboBoxItem>
                             <ComboBoxItem>Follow-up</ComboBoxItem>
                             <ComboBoxItem>Consultation</ComboBoxItem>
                             <ComboBoxItem>Emergency</ComboBoxItem>
                             <ComboBoxItem>Procedure</ComboBoxItem>
-                            <ComboBox.Styles>
-                                <Style Selector="ComboBox:pointerover /template/ Border#Background">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </ComboBox.Styles>
                         </ComboBox>
                         
                         <!-- Visit Duration (New Field) -->
@@ -109,21 +92,13 @@
                                    Margin="0,20,15,0"
                                    FontWeight="Medium"/>
                         <Grid Grid.Row="3" Grid.Column="1" ColumnDefinitions="*,Auto">
-                            <NumericUpDown Value="30" 
+                            <NumericUpDown Value="{Binding VisitDuration}" 
                                           Minimum="5" 
                                           Maximum="240" 
                                           Increment="5"
                                           HorizontalAlignment="Stretch"
                                           VerticalAlignment="Center"
-                                          Padding="10,8"
-                                          Background="White">
-                                <NumericUpDown.Styles>
-                                    <Style Selector="NumericUpDown:pointerover /template/ Border#PART_BorderElement">
-                                        <Setter Property="Background" Value="White"/>
-                                        <Setter Property="BorderBrush" Value="#000000"/>
-                                        <Setter Property="BorderThickness" Value="2"/>
-                                    </Style>
-                                </NumericUpDown.Styles>
+                                          Padding="10,8">
                             </NumericUpDown>
                             <TextBlock Grid.Column="1" 
                                        Text="minutes" 
@@ -144,21 +119,8 @@
                                  AcceptsReturn="True"
                                  TextWrapping="Wrap"
                                  Padding="10,8"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                     </Grid>
                 </StackPanel>
             </Border>

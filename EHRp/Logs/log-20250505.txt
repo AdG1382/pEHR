@@ -1,0 +1,367 @@
+2025-05-05 11:12:09.748 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 11:12:09.850 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:12:09.892 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:12:09.896 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:12:09.896 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 11:12:09.896 +05:30 [INF] Initializing theme manager
+2025-05-05 11:12:09.896 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:12:09.897 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:12:09.897 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:12:10.170 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 11:12:10.170 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:12:10.227 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:12:10.227 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:12:10.767 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 11:12:10.768 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:12:10.796 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 11:12:10.796 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:12:10.864 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 11:12:10.864 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:12:22.074 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 11:12:22.078 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 11:12:22.079 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 11:12:22.108 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:12:22.108 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 11:12:22.109 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 11:12:25.050 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 11:12:25.051 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 11:12:25.076 +05:30 [INF] Loaded 2 patients
+2025-05-05 11:12:25.142 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 11:12:27.982 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-05 11:12:27.982 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 11:12:28.045 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 1 - John Doe
+2025-05-05 11:12:28.080 +05:30 [INF] Successfully loaded patient data for ID: 1
+2025-05-05 11:12:28.080 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 11:12:41.764 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:12:43.140 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:12:43.866 +05:30 [INF] Changed tab to index: 3
+2025-05-05 11:12:44.921 +05:30 [INF] Changed tab to index: 0
+2025-05-05 11:12:47.358 +05:30 [INF] Edit patient action triggered for patient ID: 1
+2025-05-05 11:12:49.095 +05:30 [INF] Add visit action triggered for patient ID: 1
+2025-05-05 11:12:49.956 +05:30 [INF] Add prescription action triggered for patient ID: 1
+2025-05-05 11:12:51.239 +05:30 [INF] Navigating back from patient details
+2025-05-05 11:12:51.241 +05:30 [INF] Navigating back to PatientsViewModel
+2025-05-05 11:12:51.258 +05:30 [INF] Successfully navigated back to PatientsViewModel
+2025-05-05 11:12:53.823 +05:30 [INF] Open patient action triggered for patient ID: 2
+2025-05-05 11:12:53.823 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 11:12:53.852 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 2 - Jane Smith
+2025-05-05 11:12:53.862 +05:30 [INF] Successfully loaded patient data for ID: 2
+2025-05-05 11:12:53.862 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 11:12:57.380 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:12:58.304 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:22:43.469 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 11:22:43.599 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:22:43.653 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:22:43.657 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:22:43.657 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 11:22:43.658 +05:30 [INF] Initializing theme manager
+2025-05-05 11:22:43.658 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:22:43.659 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:22:43.659 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:22:44.208 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 11:22:44.208 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:22:44.265 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:22:44.265 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:22:45.090 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 11:22:45.091 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:22:45.129 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 11:22:45.129 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:22:45.268 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 11:22:45.268 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:22:57.456 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 11:22:57.468 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 11:22:57.473 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 11:22:57.530 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:22:57.531 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 11:22:57.531 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 11:22:59.419 +05:30 [INF] Executing AddPatient command
+2025-05-05 11:22:59.434 +05:30 [INF] Navigating to AddPatientViewModel with parameter type: null
+2025-05-05 11:22:59.546 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-05 11:22:59.548 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-05 11:22:59.548 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-05 11:23:51.099 +05:30 [INF] Saving patient: Aditya Gagare
+2025-05-05 11:23:51.100 +05:30 [INF] Status message: Patient Aditya Gagare added successfully
+2025-05-05 11:23:51.103 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-05 11:23:51.104 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:23:51.163 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-05 11:23:53.096 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 11:23:53.098 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 11:23:53.168 +05:30 [INF] Loaded 2 patients
+2025-05-05 11:23:53.314 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 11:23:55.475 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-05 11:23:55.475 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 11:23:55.515 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:23:55.515 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 11:23:57.113 +05:30 [INF] Executing AddVisit command
+2025-05-05 11:23:57.114 +05:30 [INF] Navigating to VisitFormViewModel with parameter type: null
+2025-05-05 11:23:57.240 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-05 11:23:57.243 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-05 11:23:57.243 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-05 11:24:04.941 +05:30 [INF] Cancelling add visit operation
+2025-05-05 11:24:04.942 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-05 11:24:04.942 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:24:05.015 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-05 11:24:06.174 +05:30 [INF] Executing NewPrescription command
+2025-05-05 11:24:06.174 +05:30 [INF] Navigating to PrescriptionFormViewModel with parameter type: null
+2025-05-05 11:24:06.252 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-05 11:24:06.256 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-05 11:24:06.256 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-05 11:24:24.294 +05:30 [INF] Cancelling add prescription operation
+2025-05-05 11:24:24.295 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-05 11:24:24.295 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:24:24.369 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-05 11:24:25.410 +05:30 [INF] Executing NewPrescription command
+2025-05-05 11:24:25.410 +05:30 [INF] Navigating to PrescriptionFormViewModel with parameter type: null
+2025-05-05 11:24:25.449 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-05 11:24:25.449 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-05 11:24:25.450 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-05 11:24:26.866 +05:30 [INF] Cancelling add prescription operation
+2025-05-05 11:24:26.866 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-05 11:24:26.866 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:24:26.894 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-05 11:24:30.219 +05:30 [INF] Executing ViewPatient command for John Doe
+2025-05-05 11:24:30.220 +05:30 [INF] ViewPatient navigation not yet implemented for John Doe
+2025-05-05 11:24:31.644 +05:30 [INF] Executing ViewPatient command for Jane Smith
+2025-05-05 11:24:31.644 +05:30 [INF] ViewPatient navigation not yet implemented for Jane Smith
+2025-05-05 11:24:39.412 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 11:24:39.412 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 11:24:39.428 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 11:24:44.365 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-05 11:24:44.365 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 11:24:44.524 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 1 - John Doe
+2025-05-05 11:24:44.584 +05:30 [INF] Successfully loaded patient data for ID: 1
+2025-05-05 11:24:44.585 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 11:24:46.689 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:24:47.977 +05:30 [INF] Changed tab to index: 0
+2025-05-05 11:25:16.494 +05:30 [INF] Edit patient action triggered for patient ID: 1
+2025-05-05 11:25:17.587 +05:30 [INF] Add visit action triggered for patient ID: 1
+2025-05-05 11:25:18.293 +05:30 [INF] Add prescription action triggered for patient ID: 1
+2025-05-05 11:25:25.675 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:25:26.762 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:25:28.044 +05:30 [INF] Changed tab to index: 3
+2025-05-05 11:25:29.879 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:25:30.735 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:25:31.752 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:25:32.363 +05:30 [INF] Changed tab to index: 3
+2025-05-05 11:25:35.420 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:25:36.393 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:25:38.480 +05:30 [INF] Changed tab to index: 0
+2025-05-05 11:25:39.563 +05:30 [INF] Changed tab to index: 1
+2025-05-05 11:25:41.143 +05:30 [INF] Changed tab to index: 2
+2025-05-05 11:25:42.837 +05:30 [INF] Changed tab to index: 3
+2025-05-05 11:30:11.760 +05:30 [INF] Navigating to menu item: Calendar
+2025-05-05 11:30:11.761 +05:30 [INF] Navigating to CalendarViewModel with parameter type: null
+2025-05-05 11:30:11.925 +05:30 [INF] Loaded 2 calendar events
+2025-05-05 11:30:11.975 +05:30 [INF] Successfully navigated to CalendarViewModel
+2025-05-05 11:30:12.971 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-05 11:30:12.971 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 11:30:13.020 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:30:13.020 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 11:31:45.563 +05:30 [INF] Navigating to menu item: Appointments
+2025-05-05 11:31:45.564 +05:30 [INF] Navigating to AppointmentsViewModel with parameter type: null
+2025-05-05 11:31:45.602 +05:30 [WRN] AppointmentsView created without DataContext, using fallback ViewModel
+2025-05-05 11:31:45.617 +05:30 [INF] Successfully set AppointmentsViewModel from DI
+2025-05-05 11:31:45.622 +05:30 [WRN] AppointmentsView created without DataContext, using fallback ViewModel
+2025-05-05 11:31:45.623 +05:30 [INF] Successfully set AppointmentsViewModel from DI
+2025-05-05 11:31:45.627 +05:30 [INF] Successfully navigated to AppointmentsViewModel
+2025-05-05 11:50:50.521 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 11:50:50.653 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:50:50.721 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:50:50.727 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:50:50.727 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 11:50:50.727 +05:30 [INF] Initializing theme manager
+2025-05-05 11:50:50.727 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:50:50.729 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:50:50.729 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:50:51.086 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 11:50:51.086 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 11:50:51.129 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 11:50:51.129 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 11:50:51.879 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 11:50:51.880 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:50:51.911 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 11:50:51.911 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:50:52.029 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 11:50:52.030 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 11:51:17.187 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 11:51:17.193 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 11:51:17.195 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 11:51:17.240 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 11:51:17.240 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 11:51:17.240 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 11:51:19.124 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 11:51:19.126 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 11:51:19.199 +05:30 [INF] Loaded 2 patients
+2025-05-05 11:51:19.359 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 11:51:21.666 +05:30 [INF] Open patient action triggered for patient ID: 2
+2025-05-05 11:51:21.667 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 11:51:21.813 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 2 - Jane Smith
+2025-05-05 11:51:21.888 +05:30 [INF] Successfully loaded patient data for ID: 2
+2025-05-05 11:51:21.888 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 11:51:23.107 +05:30 [INF] Changed tab to index: 2
+2025-05-05 12:09:57.912 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 12:09:58.129 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:09:58.270 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:09:58.281 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:09:58.281 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 12:09:58.282 +05:30 [INF] Initializing theme manager
+2025-05-05 12:09:58.282 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:09:58.285 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:09:58.285 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:09:58.743 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 12:09:58.744 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:09:58.777 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:09:58.777 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:09:59.496 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 12:09:59.497 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:09:59.526 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 12:09:59.527 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:09:59.638 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 12:09:59.638 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:10:10.818 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 12:10:10.823 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 12:10:10.825 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 12:10:10.863 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 12:10:10.864 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 12:10:10.864 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 12:10:14.426 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 12:10:14.428 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 12:10:14.495 +05:30 [INF] Loaded 2 patients
+2025-05-05 12:10:14.621 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 12:10:17.267 +05:30 [INF] Open patient action triggered for patient ID: 2
+2025-05-05 12:10:17.268 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 12:10:17.421 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 2 - Jane Smith
+2025-05-05 12:10:17.469 +05:30 [INF] Loaded 2 visits for patient ID: 2
+2025-05-05 12:10:17.470 +05:30 [INF] Loaded 0 lab reports for patient ID: 2
+2025-05-05 12:10:17.471 +05:30 [INF] Successfully loaded patient data for ID: 2
+2025-05-05 12:10:17.471 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 12:10:18.520 +05:30 [INF] Changed tab to index: 1
+2025-05-05 12:10:19.161 +05:30 [INF] Changed tab to index: 3
+2025-05-05 12:10:19.929 +05:30 [INF] Changed tab to index: 2
+2025-05-05 12:15:33.021 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 12:15:33.161 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:15:33.216 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:15:33.220 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:15:33.220 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 12:15:33.221 +05:30 [INF] Initializing theme manager
+2025-05-05 12:15:33.221 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:15:33.222 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:15:33.222 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:15:33.668 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 12:15:33.668 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:15:33.701 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:15:33.702 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:15:34.202 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 12:15:34.204 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:15:34.242 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 12:15:34.242 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:15:34.368 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 12:15:34.368 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:16:18.402 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 12:16:18.411 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 12:16:18.414 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 12:16:18.475 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 12:16:18.476 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 12:16:18.476 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 12:16:20.540 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 12:16:20.542 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 12:16:20.608 +05:30 [INF] Loaded 2 patients
+2025-05-05 12:16:20.757 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 12:16:23.512 +05:30 [INF] Open patient action triggered for patient ID: 2
+2025-05-05 12:16:23.513 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 12:16:23.666 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 2 - Jane Smith
+2025-05-05 12:16:23.779 +05:30 [INF] Loading visits for patient ID: 2
+2025-05-05 12:16:23.789 +05:30 [INF] Successfully added dummy visits for patient ID: 2
+2025-05-05 12:16:23.789 +05:30 [INF] Loaded 2 visits for patient ID: 2
+2025-05-05 12:16:23.791 +05:30 [INF] Loaded 0 lab reports for patient ID: 2
+2025-05-05 12:16:23.791 +05:30 [INF] Successfully loaded patient data for ID: 2
+2025-05-05 12:16:23.791 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 12:16:25.723 +05:30 [INF] Changed tab to index: 1
+2025-05-05 12:16:26.374 +05:30 [INF] Changed tab to index: 3
+2025-05-05 12:16:26.906 +05:30 [INF] Changed tab to index: 2
+2025-05-05 12:26:09.456 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 12:26:09.588 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:26:09.643 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:26:09.648 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:26:09.648 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 12:26:09.649 +05:30 [INF] Initializing theme manager
+2025-05-05 12:26:09.649 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:26:09.650 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:26:09.650 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:26:10.073 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 12:26:10.073 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:26:10.120 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:26:10.120 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:26:10.720 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 12:26:10.722 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:26:10.758 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 12:26:10.758 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:26:10.886 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 12:26:10.886 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:26:30.487 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 12:26:30.496 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 12:26:30.499 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 12:26:30.550 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 12:26:30.550 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 12:26:30.550 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 12:26:32.255 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 12:26:32.257 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 12:26:32.328 +05:30 [INF] Loaded 2 patients
+2025-05-05 12:26:32.478 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 12:26:34.853 +05:30 [INF] Open patient action triggered for patient ID: 2
+2025-05-05 12:26:34.853 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 12:26:34.992 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 2 - Jane Smith
+2025-05-05 12:26:35.059 +05:30 [INF] Loading visits for patient ID: 2
+2025-05-05 12:26:35.070 +05:30 [INF] Successfully added dummy visits for patient ID: 2
+2025-05-05 12:26:35.071 +05:30 [INF] Loaded 2 visits for patient ID: 2
+2025-05-05 12:26:35.074 +05:30 [INF] Loaded 0 lab reports for patient ID: 2
+2025-05-05 12:26:35.074 +05:30 [INF] Successfully loaded patient data for ID: 2
+2025-05-05 12:26:35.074 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 12:26:36.053 +05:30 [INF] Switching to Visits tab
+2025-05-05 12:26:36.055 +05:30 [INF] Changing tab to index: 2
+2025-05-05 12:26:36.055 +05:30 [INF] Switching to Visits tab
+2025-05-05 12:26:36.055 +05:30 [INF] Switching to Visits tab
+2025-05-05 12:26:36.055 +05:30 [INF] Changed tab to index: 2
+2025-05-05 12:33:14.721 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-05 12:33:14.909 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:33:14.977 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:33:14.983 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:33:14.983 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-05 12:33:14.984 +05:30 [INF] Initializing theme manager
+2025-05-05 12:33:14.984 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:33:14.986 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:33:14.986 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:33:15.398 +05:30 [INF] Application startup completed, applying theme again
+2025-05-05 12:33:15.398 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-05 12:33:15.430 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-05 12:33:15.430 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-05 12:33:15.917 +05:30 [INF] Main window activated, refreshing theme
+2025-05-05 12:33:15.919 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:33:15.951 +05:30 [INF] Main window opened, refreshing theme
+2025-05-05 12:33:15.951 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:33:16.060 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-05 12:33:16.060 +05:30 [INF] Refreshing theme on all windows
+2025-05-05 12:33:33.985 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-05 12:33:33.994 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-05 12:33:33.997 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-05 12:33:34.048 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-05 12:33:34.049 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-05 12:33:34.049 +05:30 [INF] User logged in successfully: doctor
+2025-05-05 12:33:39.766 +05:30 [INF] Navigating to menu item: Patients
+2025-05-05 12:33:39.768 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-05 12:33:39.833 +05:30 [INF] Loaded 2 patients
+2025-05-05 12:33:40.049 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-05 12:33:43.186 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-05 12:33:43.186 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-05 12:33:43.343 +05:30 [INF] Navigated to PatientDetailViewModel with parameter: PatientListItem: 1 - John Doe
+2025-05-05 12:33:43.385 +05:30 [INF] Loading visits for patient ID: 1
+2025-05-05 12:33:43.391 +05:30 [INF] Successfully added dummy visits for patient ID: 1
+2025-05-05 12:33:43.392 +05:30 [INF] Loaded 1 visits for patient ID: 1
+2025-05-05 12:33:43.393 +05:30 [INF] Loaded 0 lab reports for patient ID: 1
+2025-05-05 12:33:43.393 +05:30 [INF] Successfully loaded patient data for ID: 1
+2025-05-05 12:33:43.393 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-05 12:33:44.940 +05:30 [INF] Switching to Visits tab
+2025-05-05 12:33:44.943 +05:30 [INF] Changing tab to index: 2
+2025-05-05 12:33:44.943 +05:30 [INF] Switching to Visits tab
+2025-05-05 12:33:44.943 +05:30 [INF] Switching to Visits tab
+2025-05-05 12:33:44.943 +05:30 [INF] Changed tab to index: 2

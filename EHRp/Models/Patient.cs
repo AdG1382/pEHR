@@ -32,7 +32,16 @@ namespace EHRp.Models
         public required string Email { get; set; }
         
         [StringLength(255)]
+        public string? InsuranceProvider { get; set; }
+        
+        [StringLength(50)]
+        public string? InsuranceNumber { get; set; }
+        
+        [StringLength(255)]
         public string? MedicalHistory { get; set; }
+        
+        [StringLength(255)]
+        public string? Allergies { get; set; }
         
         [StringLength(255)]
         public string? Notes { get; set; }

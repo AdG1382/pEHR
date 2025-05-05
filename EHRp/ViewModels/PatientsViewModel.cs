@@ -6,6 +6,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using EHRp.Models;
 using EHRp.Services;
+using EHRp.ViewModels.Patients;
 using Microsoft.Extensions.Logging;
 
 namespace EHRp.ViewModels
@@ -13,6 +14,7 @@ namespace EHRp.ViewModels
     public partial class PatientsViewModel : ViewModelBase
     {
         private readonly IPatientService? _patientService;
+        private readonly INavigationService? _navigationService;
         private readonly ILogger<PatientsViewModel>? _logger;
         
         [ObservableProperty]
@@ -38,9 +40,13 @@ namespace EHRp.ViewModels
             LoadDummyData();
         }
         
-        public PatientsViewModel(IPatientService patientService, ILogger<PatientsViewModel> logger)
+        public PatientsViewModel(
+            IPatientService patientService, 
+            INavigationService navigationService,
+            ILogger<PatientsViewModel> logger)
         {
             _patientService = patientService ?? throw new ArgumentNullException(nameof(patientService));
+            _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             
             // Load data asynchronously when the ViewModel is created
@@ -132,39 +138,69 @@ namespace EHRp.ViewModels
         }
         
         [RelayCommand]
-        private async Task AddNewPatientAsync()
+        private void AddNewPatient()
         {
-            // This would open the add patient dialog
-            // For now, we'll just log the action
             _logger.LogInformation("Add new patient action triggered");
             
-            // In a real implementation, you would:
-            // 1. Show a dialog or navigate to a new patient form
-            // 2. Get the patient data from the form
-            // 3. Call the service to add the patient
-            // 4. Refresh the patient list
-            
-            // Example:
-            // var dialogResult = await _dialogService.ShowAddPatientDialogAsync();
-            // if (dialogResult.Success)
-            // {
-            //     await _patientService.AddPatientAsync(dialogResult.Patient);
-            //     await LoadPatientsAsync();
-            // }
+            try
+            {
+                // Navigate to the AddPatientViewModel
+                _navigationService.NavigateTo<EHRp.ViewModels.Patients.AddPatientViewModel>();
+                
+                // Clear any previous error messages
+                ErrorMessage = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error navigating to add patient view");
+                ErrorMessage = $"Failed to open add patient form: {ex.Message}";
+                
+                // Log additional details for debugging
+                if (ex.InnerException != null)
+                {
+                    _logger.LogError(ex.InnerException, "Inner exception details");
+                }
+            }
         }
         
         [RelayCommand]
-        private async Task ViewPatientDetailsAsync(int patientId)
+        private void ViewPatientDetailsAsync(int patientId)
         {
-            // This would navigate to the patient details page
+            // Navigate to the patient details page
             _logger.LogInformation("View patient details action triggered for patient ID: {PatientId}", patientId);
             
-            // In a real implementation, you would:
-            // 1. Send a message to navigate to the patient details view
-            // 2. Or use a navigation service to navigate to the patient details
-            
-            // Example:
-            // WeakReferenceMessenger.Default.Send(new NavigateToPatientDetailsMessage(patientId));
+            // Use the navigation service to navigate to the patient details view
+            _navigationService.NavigateTo<EHRp.ViewModels.Patients.PatientDetailViewModel>(patientId);
+        }
+        
+        [RelayCommand]
+        private void OpenPatient()
+        {
+            if (SelectedPatient != null)
+            {
+                _logger.LogInformation("Open patient action triggered for patient ID: {PatientId}", SelectedPatient.Id);
+                
+                try
+                {
+                    // Pass the entire patient object instead of just the ID
+                    // This gives the PatientDetailViewModel more flexibility in handling the parameter
+                    _navigationService.NavigateTo<EHRp.ViewModels.Patients.PatientDetailViewModel>(SelectedPatient);
+                    
+                    // Clear any previous error messages
+                    ErrorMessage = string.Empty;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error navigating to patient details for patient ID: {PatientId}", SelectedPatient.Id);
+                    ErrorMessage = $"Failed to open patient details: {ex.Message}";
+                    
+                    // Log additional details for debugging
+                    if (ex.InnerException != null)
+                    {
+                        _logger.LogError(ex.InnerException, "Inner exception details");
+                    }
+                }
+            }
         }
         
         private int CalculateAge(DateTime? birthDate)
@@ -215,6 +251,7 @@ namespace EHRp.ViewModels
         }
     }
     
+    // Make this class public so it can be accessed from other view models
     public class PatientListItem
     {
         public int Id { get; set; }
@@ -223,5 +260,10 @@ namespace EHRp.ViewModels
         public string Gender { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
         public string LastVisit { get; set; } = string.Empty;
+        
+        public override string ToString()
+        {
+            return $"PatientListItem: {Id} - {FullName}";
+        }
     }
 }

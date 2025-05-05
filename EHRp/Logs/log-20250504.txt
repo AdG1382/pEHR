@@ -1110,3 +1110,855 @@
 2025-05-04 20:46:41.544 +05:30 [INF] Navigating to menu item: Maintenance
 2025-05-04 20:46:41.545 +05:30 [INF] Navigating to MaintenanceViewModel
 2025-05-04 20:46:41.620 +05:30 [INF] Successfully navigated to MaintenanceViewModel
+2025-05-04 21:10:18.457 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 21:10:18.588 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:10:18.638 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:10:18.645 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:10:18.645 +05:30 [INF] Theme settings loaded: Classic Gray - Light
+2025-05-04 21:10:18.645 +05:30 [INF] Initializing theme manager
+2025-05-04 21:10:18.645 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:10:18.646 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:10:18.646 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:10:19.074 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 21:10:19.074 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:10:19.096 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:10:19.096 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:10:19.681 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:10:19.682 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:10:19.715 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 21:10:19.716 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:10:19.845 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 21:10:19.845 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:10:32.881 +05:30 [WRN] Authentication failed: Invalid password for user: doctor
+2025-05-04 21:10:32.882 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 21:10:39.098 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 21:10:39.103 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:10:39.105 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 21:10:39.105 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:10:39.137 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:10:39.137 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 21:10:41.816 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 21:10:41.818 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 21:10:41.883 +05:30 [INF] Loaded 2 patients
+2025-05-04 21:10:42.034 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 21:10:44.740 +05:30 [INF] View patient details action triggered for patient ID: 1
+2025-05-04 21:10:46.762 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:10:46.762 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:10:46.763 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:10:46.850 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:10:47.641 +05:30 [INF] Executing AddPatient command
+2025-05-04 21:10:47.657 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 21:10:47.661 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 21:10:47.774 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:10:47.774 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:11:12.462 +05:30 [INF] Cancelling add patient operation
+2025-05-04 21:11:12.466 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:11:12.466 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:11:12.513 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:11:13.546 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:11:13.546 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:11:13.549 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:11:13.664 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:11:13.665 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:11:16.720 +05:30 [INF] Cancelling add visit operation
+2025-05-04 21:11:16.720 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:11:16.720 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:11:16.759 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:11:17.966 +05:30 [INF] Executing NewPrescription command
+2025-05-04 21:11:17.967 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 21:11:17.970 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 21:11:18.048 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:11:18.048 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:11:25.338 +05:30 [INF] Cancelling add prescription operation
+2025-05-04 21:11:25.338 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:11:25.338 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:11:25.370 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:11:26.991 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:11:26.992 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:11:26.993 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:11:27.013 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:11:27.013 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:11:55.276 +05:30 [INF] Cancelling add visit operation
+2025-05-04 21:11:55.276 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:11:55.276 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:11:55.309 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:12:01.542 +05:30 [INF] Navigating to menu item: Calendar
+2025-05-04 21:12:01.543 +05:30 [INF] Navigating to CalendarViewModel
+2025-05-04 21:12:01.706 +05:30 [INF] Loaded 2 calendar events
+2025-05-04 21:12:01.750 +05:30 [INF] Successfully navigated to CalendarViewModel
+2025-05-04 21:12:04.985 +05:30 [INF] Navigating to menu item: Maintenance
+2025-05-04 21:12:04.986 +05:30 [INF] Navigating to MaintenanceViewModel
+2025-05-04 21:12:05.030 +05:30 [INF] Successfully navigated to MaintenanceViewModel
+2025-05-04 21:12:07.717 +05:30 [INF] User logged out: 1
+2025-05-04 21:17:54.877 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 21:17:55.067 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:17:55.127 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:17:55.133 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:17:55.133 +05:30 [INF] Theme settings loaded: Classic Gray - Light
+2025-05-04 21:17:55.133 +05:30 [INF] Initializing theme manager
+2025-05-04 21:17:55.133 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:17:55.134 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:17:55.134 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:17:55.581 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 21:17:55.581 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:17:55.622 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:17:55.622 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:17:56.090 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:17:56.091 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:17:56.124 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 21:17:56.124 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:17:56.230 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 21:17:56.230 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:18:10.329 +05:30 [WRN] Authentication failed: Invalid password for user: doctor
+2025-05-04 21:18:10.329 +05:30 [WRN] Login failed for user: doctor
+2025-05-04 21:18:16.906 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 21:18:16.911 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:18:16.914 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 21:18:16.914 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:18:16.956 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:18:16.956 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 21:18:18.947 +05:30 [INF] Executing AddPatient command
+2025-05-04 21:18:18.961 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 21:18:18.963 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 21:18:19.066 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:18:19.066 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:20:04.150 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:20:04.152 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:20:04.152 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:20:04.208 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:20:05.414 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:20:05.414 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:20:05.416 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:20:05.473 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:20:05.473 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:20:42.302 +05:30 [INF] Cancelling add visit operation
+2025-05-04 21:20:42.306 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:20:42.307 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:20:42.333 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:20:43.222 +05:30 [INF] Executing NewPrescription command
+2025-05-04 21:20:43.223 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 21:20:43.225 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 21:20:43.282 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:20:43.283 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:22:38.156 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:22:38.156 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:26:09.588 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 21:26:09.781 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:26:09.866 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:26:09.875 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:26:09.875 +05:30 [INF] Theme settings loaded: Classic Gray - Light
+2025-05-04 21:26:09.876 +05:30 [INF] Initializing theme manager
+2025-05-04 21:26:09.876 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:26:09.878 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:26:09.878 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:26:10.381 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 21:26:10.381 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 21:26:10.406 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 21:26:10.406 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 21:26:10.958 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:26:10.959 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:26:11.013 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 21:26:11.013 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:26:11.138 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 21:26:11.138 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:26:22.444 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 21:26:22.449 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:26:22.451 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 21:26:22.451 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:26:22.480 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:26:22.480 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 21:26:28.056 +05:30 [INF] Executing AddPatient command
+2025-05-04 21:26:28.073 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 21:26:28.076 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 21:26:28.184 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:26:28.184 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:26:42.723 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 21:26:42.724 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 21:26:42.793 +05:30 [INF] Loaded 2 patients
+2025-05-04 21:26:42.962 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 21:26:44.794 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:26:44.795 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:26:44.795 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:26:44.848 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:26:46.214 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:26:46.214 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:26:46.219 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:26:46.311 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:26:46.311 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:26:58.173 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:26:58.174 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:26:58.174 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:26:58.205 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:26:59.002 +05:30 [INF] Executing NewPrescription command
+2025-05-04 21:26:59.002 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 21:26:59.007 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 21:26:59.081 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:26:59.082 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:27:05.737 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 21:27:05.738 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 21:27:05.849 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 21:27:08.171 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:27:08.274 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:27:08.275 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:27:08.296 +05:30 [INF] Theme settings saved: Classic Gray - Dark
+2025-05-04 21:27:08.297 +05:30 [INF] Mode changed to: Dark
+2025-05-04 21:27:09.868 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:27:09.869 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:27:09.869 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:27:09.950 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:27:10.886 +05:30 [INF] Executing AddPatient command
+2025-05-04 21:27:10.886 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 21:27:10.888 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 21:27:10.908 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:27:10.909 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:27:23.793 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:27:23.793 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:27:23.793 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:27:23.833 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:27:24.898 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:27:24.898 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:27:24.900 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:27:24.918 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:27:24.918 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:27:27.789 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:27:27.789 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:27:27.789 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:27:27.822 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:27:28.815 +05:30 [INF] Executing NewPrescription command
+2025-05-04 21:27:28.815 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 21:27:28.816 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 21:27:28.834 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:27:28.834 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:28:34.423 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:28:34.424 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:34:42.162 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:34:42.162 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:37:59.343 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 21:37:59.495 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:37:59.538 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:37:59.543 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:37:59.543 +05:30 [INF] Theme settings loaded: Classic Gray - Dark
+2025-05-04 21:37:59.543 +05:30 [INF] Initializing theme manager
+2025-05-04 21:37:59.543 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:37:59.544 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:37:59.545 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:38:00.008 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 21:38:00.008 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:38:00.046 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:38:00.046 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:38:00.601 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:38:00.602 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:38:00.640 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 21:38:00.640 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:38:00.751 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 21:38:00.751 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:38:18.150 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:38:18.151 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:38:32.310 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 21:38:32.316 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:38:32.318 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 21:38:32.319 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:38:32.352 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:38:32.352 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 21:38:36.247 +05:30 [INF] Executing AddPatient command
+2025-05-04 21:38:36.262 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 21:38:36.265 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 21:38:36.399 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:38:36.399 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:38:48.112 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:38:48.114 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:38:48.114 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:38:48.149 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:38:49.325 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:38:49.326 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:38:49.330 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:38:49.445 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:38:49.445 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:39:40.047 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:39:40.048 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:39:40.122 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:39:40.122 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:56:28.333 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 21:56:28.506 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:56:28.556 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:56:28.561 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:56:28.561 +05:30 [INF] Theme settings loaded: Classic Gray - Dark
+2025-05-04 21:56:28.561 +05:30 [INF] Initializing theme manager
+2025-05-04 21:56:28.561 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:56:28.562 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:56:28.562 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:56:28.956 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 21:56:28.956 +05:30 [INF] Applying theme: Classic Gray - Dark from avares://EHRp/Themes/ClassicGrayDark.axaml
+2025-05-04 21:56:28.983 +05:30 [INF] Theme styles applied successfully: Classic Gray - Dark
+2025-05-04 21:56:28.983 +05:30 [INF] Theme applied: Classic Gray - Dark
+2025-05-04 21:56:29.648 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:56:29.649 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:56:29.681 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 21:56:29.681 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:56:29.776 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 21:56:29.776 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:56:44.457 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 21:56:44.465 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:56:44.468 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 21:56:44.468 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:56:44.543 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:56:44.543 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 21:56:46.324 +05:30 [INF] Executing AddPatient command
+2025-05-04 21:56:46.339 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 21:56:46.342 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 21:56:46.455 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:56:46.455 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 21:57:00.568 +05:30 [INF] Cancelling add patient operation
+2025-05-04 21:57:00.572 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:57:00.573 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:57:00.608 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:57:01.492 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:57:01.492 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:57:01.495 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:57:01.625 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:57:01.625 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:57:06.907 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 21:57:06.907 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 21:57:06.947 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 21:57:09.528 +05:30 [INF] Applying theme: Cool Blue - Dark from avares://EHRp/Themes/CoolBlueDark.axaml
+2025-05-04 21:57:09.665 +05:30 [INF] Theme styles applied successfully: Cool Blue - Dark
+2025-05-04 21:57:09.666 +05:30 [INF] Theme applied: Cool Blue - Dark
+2025-05-04 21:57:09.686 +05:30 [INF] Theme settings saved: Cool Blue - Dark
+2025-05-04 21:57:09.687 +05:30 [INF] Theme changed to: Cool Blue
+2025-05-04 21:57:13.050 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 21:57:13.168 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 21:57:13.168 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 21:57:13.170 +05:30 [INF] Theme settings saved: Cool Blue - Light
+2025-05-04 21:57:13.170 +05:30 [INF] Mode changed to: Light
+2025-05-04 21:57:14.397 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:57:14.398 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:57:14.398 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:57:14.456 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:57:15.439 +05:30 [INF] Executing AddVisit command
+2025-05-04 21:57:15.439 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 21:57:15.441 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 21:57:15.460 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:57:15.460 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 21:57:24.412 +05:30 [INF] Cancelling add visit operation
+2025-05-04 21:57:24.413 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 21:57:24.413 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:57:24.498 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 21:57:25.381 +05:30 [INF] Executing NewPrescription command
+2025-05-04 21:57:25.382 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 21:57:25.386 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 21:57:25.454 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:57:25.454 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:58:03.138 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 21:58:03.138 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 21:58:05.260 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 21:58:05.260 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 21:58:05.318 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 21:58:07.639 +05:30 [INF] Applying theme: Cool Blue - Dark from avares://EHRp/Themes/CoolBlueDark.axaml
+2025-05-04 21:58:07.767 +05:30 [INF] Theme styles applied successfully: Cool Blue - Dark
+2025-05-04 21:58:07.767 +05:30 [INF] Theme applied: Cool Blue - Dark
+2025-05-04 21:58:07.769 +05:30 [INF] Theme settings saved: Cool Blue - Dark
+2025-05-04 21:58:07.769 +05:30 [INF] Mode changed to: Dark
+2025-05-04 21:58:08.896 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 21:58:08.896 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 21:58:08.896 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 21:58:08.933 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 21:58:10.170 +05:30 [INF] Executing NewPrescription command
+2025-05-04 21:58:10.171 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 21:58:10.172 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 21:58:10.194 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 21:58:10.194 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:02:54.518 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:02:54.519 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:23:54.401 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 22:23:54.699 +05:30 [INF] Applying theme: Cool Blue - Dark from avares://EHRp/Themes/CoolBlueDark.axaml
+2025-05-04 22:23:54.870 +05:30 [INF] Theme styles applied successfully: Cool Blue - Dark
+2025-05-04 22:23:54.881 +05:30 [INF] Theme applied: Cool Blue - Dark
+2025-05-04 22:23:54.881 +05:30 [INF] Theme settings loaded: Cool Blue - Dark
+2025-05-04 22:23:54.882 +05:30 [INF] Initializing theme manager
+2025-05-04 22:23:54.882 +05:30 [INF] Applying theme: Cool Blue - Dark from avares://EHRp/Themes/CoolBlueDark.axaml
+2025-05-04 22:23:54.887 +05:30 [INF] Theme styles applied successfully: Cool Blue - Dark
+2025-05-04 22:23:54.887 +05:30 [INF] Theme applied: Cool Blue - Dark
+2025-05-04 22:23:55.590 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 22:23:55.590 +05:30 [INF] Applying theme: Cool Blue - Dark from avares://EHRp/Themes/CoolBlueDark.axaml
+2025-05-04 22:23:55.656 +05:30 [INF] Theme styles applied successfully: Cool Blue - Dark
+2025-05-04 22:23:55.657 +05:30 [INF] Theme applied: Cool Blue - Dark
+2025-05-04 22:23:56.711 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:23:56.712 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:23:56.738 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 22:23:56.738 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:23:56.892 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 22:23:56.892 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:24:09.677 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 22:24:09.684 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:24:09.687 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 22:24:09.688 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:24:09.733 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:24:09.734 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 22:24:12.314 +05:30 [INF] Executing AddPatient command
+2025-05-04 22:24:12.327 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 22:24:12.330 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 22:24:12.443 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 22:24:12.443 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 22:24:27.725 +05:30 [INF] Cancelling add patient operation
+2025-05-04 22:24:27.728 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 22:24:27.728 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:24:27.775 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 22:24:28.598 +05:30 [INF] Executing AddVisit command
+2025-05-04 22:24:28.599 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 22:24:28.602 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 22:24:28.725 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 22:24:28.726 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 22:24:32.760 +05:30 [INF] Cancelling add visit operation
+2025-05-04 22:24:32.761 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 22:24:32.761 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:24:32.817 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 22:24:33.772 +05:30 [INF] Executing NewPrescription command
+2025-05-04 22:24:33.773 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 22:24:33.776 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 22:24:33.858 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:24:33.858 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:24:38.099 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 22:24:38.101 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 22:24:38.211 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 22:24:43.343 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 22:24:43.476 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 22:24:43.476 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 22:24:43.495 +05:30 [INF] Theme settings saved: Cool Blue - Light
+2025-05-04 22:24:43.495 +05:30 [INF] Mode changed to: Light
+2025-05-04 22:24:45.427 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 22:24:45.427 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:24:45.427 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:24:45.491 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:24:46.827 +05:30 [INF] Executing AddPatient command
+2025-05-04 22:24:46.828 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 22:24:46.829 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 22:24:46.871 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 22:24:46.871 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 22:24:58.527 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 22:24:58.527 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 22:24:58.594 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 22:25:03.042 +05:30 [INF] Applying theme: Classic Gray - Light from avares://EHRp/Themes/ClassicGrayLight.axaml
+2025-05-04 22:25:03.153 +05:30 [INF] Theme styles applied successfully: Classic Gray - Light
+2025-05-04 22:25:03.154 +05:30 [INF] Theme applied: Classic Gray - Light
+2025-05-04 22:25:03.156 +05:30 [INF] Theme settings saved: Classic Gray - Light
+2025-05-04 22:25:03.156 +05:30 [INF] Theme changed to: Classic Gray
+2025-05-04 22:25:07.104 +05:30 [INF] Applying theme: Elegant Purple - Light from avares://EHRp/Themes/ElegantPurpleLight.axaml
+2025-05-04 22:25:07.223 +05:30 [INF] Theme styles applied successfully: Elegant Purple - Light
+2025-05-04 22:25:07.223 +05:30 [INF] Theme applied: Elegant Purple - Light
+2025-05-04 22:25:07.224 +05:30 [INF] Theme settings saved: Elegant Purple - Light
+2025-05-04 22:25:07.224 +05:30 [INF] Theme changed to: Elegant Purple
+2025-05-04 22:25:09.185 +05:30 [INF] Applying theme: Fiery Red - Light from avares://EHRp/Themes/FieryRedLight.axaml
+2025-05-04 22:25:09.307 +05:30 [INF] Theme styles applied successfully: Fiery Red - Light
+2025-05-04 22:25:09.307 +05:30 [INF] Theme applied: Fiery Red - Light
+2025-05-04 22:25:09.308 +05:30 [INF] Theme settings saved: Fiery Red - Light
+2025-05-04 22:25:09.308 +05:30 [INF] Theme changed to: Fiery Red
+2025-05-04 22:25:10.933 +05:30 [INF] Applying theme: Calming Green - Light from avares://EHRp/Themes/CalmingGreenLight.axaml
+2025-05-04 22:25:11.060 +05:30 [INF] Theme styles applied successfully: Calming Green - Light
+2025-05-04 22:25:11.060 +05:30 [INF] Theme applied: Calming Green - Light
+2025-05-04 22:25:11.061 +05:30 [INF] Theme settings saved: Calming Green - Light
+2025-05-04 22:25:11.061 +05:30 [INF] Theme changed to: Calming Green
+2025-05-04 22:25:12.518 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 22:25:12.518 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:25:12.518 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:25:12.572 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:25:20.227 +05:30 [INF] Executing NewPrescription command
+2025-05-04 22:25:20.227 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 22:25:20.228 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 22:25:20.246 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:25:20.246 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:25:26.807 +05:30 [INF] Cancelling add prescription operation
+2025-05-04 22:25:26.807 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 22:25:26.807 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:25:26.845 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 22:27:45.914 +05:30 [INF] Executing AddVisit command
+2025-05-04 22:27:45.915 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 22:27:45.916 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 22:27:45.941 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 22:27:45.941 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 22:29:10.071 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:29:10.071 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:29:10.577 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:29:10.577 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:30:47.375 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:30:47.375 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:30:49.244 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 22:30:49.244 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 22:30:49.324 +05:30 [INF] Loaded 2 patients
+2025-05-04 22:30:49.426 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 22:30:52.141 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 22:30:52.141 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 22:30:52.185 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 22:30:54.508 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 22:30:54.508 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 22:30:54.529 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 22:31:14.119 +05:30 [INF] Loaded 2 patients
+2025-05-04 22:31:14.776 +05:30 [INF] Loaded 2 patients
+2025-05-04 22:33:20.798 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 22:33:20.798 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 22:33:20.798 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 22:33:21.554 +05:30 [INF] Navigating to menu item: Calendar
+2025-05-04 22:33:21.555 +05:30 [INF] Navigating to CalendarViewModel
+2025-05-04 22:33:21.724 +05:30 [INF] Loaded 2 calendar events
+2025-05-04 22:33:21.799 +05:30 [INF] Successfully navigated to CalendarViewModel
+2025-05-04 22:33:28.372 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:33:28.372 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:38:47.830 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:38:47.831 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:38:50.222 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 22:38:50.222 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 22:38:50.239 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 22:44:26.564 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:44:26.564 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:44:28.345 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 22:44:28.345 +05:30 [INF] Navigating to SettingsViewModel
+2025-05-04 22:44:28.390 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 22:44:30.399 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 22:44:30.522 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 22:44:30.522 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 22:44:30.524 +05:30 [INF] Theme settings saved: Calming Green - Dark
+2025-05-04 22:44:30.524 +05:30 [INF] Mode changed to: Dark
+2025-05-04 22:44:31.263 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 22:44:31.263 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:44:31.263 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:44:31.337 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:44:31.777 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 22:44:31.777 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 22:44:31.793 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 22:44:35.755 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 22:44:35.755 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:44:35.755 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:44:35.796 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:44:36.849 +05:30 [INF] Executing AddPatient command
+2025-05-04 22:44:36.849 +05:30 [INF] Navigating to AddPatientViewModel
+2025-05-04 22:44:36.851 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 22:44:36.875 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 22:44:36.875 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 22:44:42.461 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 22:44:42.461 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:44:42.461 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:44:42.554 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:44:43.795 +05:30 [INF] Executing AddVisit command
+2025-05-04 22:44:43.795 +05:30 [INF] Navigating to VisitFormViewModel
+2025-05-04 22:44:43.796 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 22:44:43.820 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 22:44:43.820 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 22:44:45.666 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 22:44:45.667 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:44:45.667 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:44:45.704 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:44:46.843 +05:30 [INF] Executing NewPrescription command
+2025-05-04 22:44:46.843 +05:30 [INF] Navigating to PrescriptionFormViewModel
+2025-05-04 22:44:46.844 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 22:44:46.869 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:44:46.869 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 22:53:48.865 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 22:53:49.105 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 22:53:49.208 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 22:53:49.216 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 22:53:49.217 +05:30 [INF] Theme settings loaded: Calming Green - Dark
+2025-05-04 22:53:49.217 +05:30 [INF] Initializing theme manager
+2025-05-04 22:53:49.217 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 22:53:49.219 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 22:53:49.219 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 22:53:49.824 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 22:53:49.825 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 22:53:49.871 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 22:53:49.871 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 22:53:50.973 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 22:53:50.975 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:53:51.008 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 22:53:51.008 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:53:51.119 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 22:53:51.119 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 22:54:26.842 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 22:54:26.850 +05:30 [INF] Navigating to DashboardViewModel
+2025-05-04 22:54:26.853 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 22:54:26.854 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 22:54:26.894 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 22:54:26.894 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 22:54:29.504 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 22:54:29.506 +05:30 [INF] Navigating to PatientsViewModel
+2025-05-04 22:54:29.577 +05:30 [INF] Loaded 2 patients
+2025-05-04 22:54:29.733 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 22:54:43.335 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 22:54:43.335 +05:30 [INF] Navigating to PatientDetailViewModel
+2025-05-04 22:54:43.340 +05:30 [ERR] Error navigating to PatientDetailViewModel
+System.InvalidOperationException: No service for type 'EHRp.ViewModels.Patients.PatientDetailViewModel' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at EHRp.Services.NavigationService.NavigateTo[T](Object parameter) in D:\pEHR\EHRp\Services\NavigationService.cs:line 57
+2025-05-04 23:07:38.704 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 23:07:39.004 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 23:07:39.061 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 23:07:39.066 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 23:07:39.067 +05:30 [INF] Theme settings loaded: Calming Green - Dark
+2025-05-04 23:07:39.067 +05:30 [INF] Initializing theme manager
+2025-05-04 23:07:39.067 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 23:07:39.069 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 23:07:39.069 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 23:07:40.049 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 23:07:40.049 +05:30 [INF] Applying theme: Calming Green - Dark from avares://EHRp/Themes/CalmingGreenDark.axaml
+2025-05-04 23:07:40.083 +05:30 [INF] Theme styles applied successfully: Calming Green - Dark
+2025-05-04 23:07:40.083 +05:30 [INF] Theme applied: Calming Green - Dark
+2025-05-04 23:07:40.982 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:07:40.984 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:07:41.009 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 23:07:41.009 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:07:41.124 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 23:07:41.124 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:08:19.853 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 23:08:19.861 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-04 23:08:19.864 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 23:08:19.912 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:08:19.912 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 23:08:19.912 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 23:08:22.449 +05:30 [INF] Executing AddPatient command
+2025-05-04 23:08:22.467 +05:30 [INF] Navigating to AddPatientViewModel with parameter type: null
+2025-05-04 23:08:22.592 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 23:08:22.595 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 23:08:22.595 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 23:08:26.743 +05:30 [INF] Cancelling add patient operation
+2025-05-04 23:08:26.747 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 23:08:26.747 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:08:26.788 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 23:08:27.681 +05:30 [INF] Executing AddVisit command
+2025-05-04 23:08:27.682 +05:30 [INF] Navigating to VisitFormViewModel with parameter type: null
+2025-05-04 23:08:27.825 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 23:08:27.828 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 23:08:27.828 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 23:08:30.435 +05:30 [INF] Cancelling add visit operation
+2025-05-04 23:08:30.435 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 23:08:30.435 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:08:30.472 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 23:08:32.450 +05:30 [INF] Executing NewPrescription command
+2025-05-04 23:08:32.450 +05:30 [INF] Navigating to PrescriptionFormViewModel with parameter type: null
+2025-05-04 23:08:32.517 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 23:08:32.521 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 23:08:32.521 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 23:08:36.320 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 23:08:36.321 +05:30 [INF] Navigating to SettingsViewModel with parameter type: null
+2025-05-04 23:08:36.435 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 23:08:38.532 +05:30 [INF] Applying theme: Calming Green - Light from avares://EHRp/Themes/CalmingGreenLight.axaml
+2025-05-04 23:08:38.646 +05:30 [INF] Theme styles applied successfully: Calming Green - Light
+2025-05-04 23:08:38.646 +05:30 [INF] Theme applied: Calming Green - Light
+2025-05-04 23:08:38.664 +05:30 [INF] Theme settings saved: Calming Green - Light
+2025-05-04 23:08:38.664 +05:30 [INF] Mode changed to: Light
+2025-05-04 23:08:45.303 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 23:08:45.303 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-04 23:08:45.407 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:08:45.407 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 23:08:48.680 +05:30 [INF] Navigating to menu item: Settings
+2025-05-04 23:08:48.680 +05:30 [INF] Navigating to SettingsViewModel with parameter type: null
+2025-05-04 23:08:48.733 +05:30 [INF] Successfully navigated to SettingsViewModel
+2025-05-04 23:08:52.073 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:08:52.218 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:08:52.218 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:08:52.220 +05:30 [INF] Theme settings saved: Cool Blue - Light
+2025-05-04 23:08:52.220 +05:30 [INF] Theme changed to: Cool Blue
+2025-05-04 23:09:06.770 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 23:09:06.770 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-04 23:09:06.808 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:09:06.808 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 23:09:08.173 +05:30 [INF] Executing AddPatient command
+2025-05-04 23:09:08.173 +05:30 [INF] Navigating to AddPatientViewModel with parameter type: null
+2025-05-04 23:09:08.195 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 23:09:08.195 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 23:09:08.195 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 23:09:11.384 +05:30 [INF] Cancelling add patient operation
+2025-05-04 23:09:11.385 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 23:09:11.385 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:09:11.449 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 23:09:12.318 +05:30 [INF] Executing AddVisit command
+2025-05-04 23:09:12.318 +05:30 [INF] Navigating to VisitFormViewModel with parameter type: null
+2025-05-04 23:09:12.339 +05:30 [INF] Navigated to VisitFormViewModel
+2025-05-04 23:09:12.339 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 23:09:12.339 +05:30 [INF] Successfully navigated to VisitFormViewModel
+2025-05-04 23:09:15.617 +05:30 [INF] Cancelling add visit operation
+2025-05-04 23:09:15.617 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 23:09:15.617 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:09:15.668 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 23:09:17.036 +05:30 [INF] Executing NewPrescription command
+2025-05-04 23:09:17.036 +05:30 [INF] Navigating to PrescriptionFormViewModel with parameter type: null
+2025-05-04 23:09:17.061 +05:30 [INF] Navigated to PrescriptionFormViewModel
+2025-05-04 23:09:17.061 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 23:09:17.061 +05:30 [INF] Successfully navigated to PrescriptionFormViewModel
+2025-05-04 23:09:20.868 +05:30 [INF] Cancelling add prescription operation
+2025-05-04 23:09:20.868 +05:30 [INF] Navigating back to DashboardViewModel
+2025-05-04 23:09:20.869 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:09:20.955 +05:30 [INF] Successfully navigated back to DashboardViewModel
+2025-05-04 23:09:22.944 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 23:09:22.944 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-04 23:09:22.981 +05:30 [INF] Loaded 2 patients
+2025-05-04 23:09:23.083 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 23:09:24.967 +05:30 [INF] Navigating to menu item: Calendar
+2025-05-04 23:09:24.968 +05:30 [INF] Navigating to CalendarViewModel with parameter type: null
+2025-05-04 23:09:25.154 +05:30 [INF] Loaded 2 calendar events
+2025-05-04 23:09:25.266 +05:30 [INF] Successfully navigated to CalendarViewModel
+2025-05-04 23:09:27.454 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 23:09:27.454 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-04 23:09:27.462 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 23:09:31.312 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 23:09:31.312 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-04 23:09:31.318 +05:30 [ERR] Error navigating to PatientDetailViewModel
+System.InvalidOperationException: No service for type 'EHRp.ViewModels.Patients.PatientDetailViewModel' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at EHRp.Services.NavigationService.NavigateTo[T](Object parameter) in D:\pEHR\EHRp\Services\NavigationService.cs:line 58
+2025-05-04 23:09:31.335 +05:30 [ERR] The view model PatientDetailViewModel is not registered in the service collection
+2025-05-04 23:09:31.335 +05:30 [ERR] Error navigating to patient details for patient ID: 1
+System.InvalidOperationException: No service for type 'EHRp.ViewModels.Patients.PatientDetailViewModel' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at EHRp.Services.NavigationService.NavigateTo[T](Object parameter) in D:\pEHR\EHRp\Services\NavigationService.cs:line 58
+   at EHRp.ViewModels.PatientsViewModel.OpenPatient() in D:\pEHR\EHRp\ViewModels\PatientsViewModel.cs:line 183
+2025-05-04 23:10:08.682 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:08.682 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:10:36.758 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:36.759 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:10:38.786 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:38.786 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:10:46.267 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:46.268 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:10:49.224 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:49.225 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:10:58.841 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:58.841 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:10:59.637 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:10:59.637 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:11:25.916 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:11:25.916 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:11:29.011 +05:30 [INF] User logged out: 1
+2025-05-04 23:11:34.972 +05:30 [INF] User requested password reset
+2025-05-04 23:14:48.391 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 23:14:48.680 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:14:48.771 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:14:48.780 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:14:48.780 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-04 23:14:48.780 +05:30 [INF] Initializing theme manager
+2025-05-04 23:14:48.780 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:14:48.783 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:14:48.783 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:14:49.284 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 23:14:49.284 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:14:49.317 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:14:49.317 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:14:49.852 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:14:49.855 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:14:49.885 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 23:14:49.885 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:14:49.974 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 23:14:49.974 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:15:02.702 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 23:15:02.709 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-04 23:15:02.712 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 23:15:02.758 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:15:02.758 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 23:15:02.758 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 23:15:04.772 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 23:15:04.773 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-04 23:15:04.839 +05:30 [INF] Loaded 2 patients
+2025-05-04 23:15:04.941 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 23:15:07.570 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 23:15:07.571 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-04 23:15:07.637 +05:30 [INF] OnNavigatedTo called with parameter type: EHRp.ViewModels.PatientListItem
+2025-05-04 23:15:07.637 +05:30 [INF] Navigating to patient details with ID from PatientListItem: 1
+2025-05-04 23:15:07.640 +05:30 [INF] Loading patient details for patient ID: 1
+2025-05-04 23:15:07.700 +05:30 [INF] Successfully loaded patient details for patient ID: 1
+2025-05-04 23:15:07.700 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-04 23:15:14.920 +05:30 [INF] Add visit action triggered for patient ID: 1
+2025-05-04 23:15:17.235 +05:30 [INF] Add visit action triggered for patient ID: 1
+2025-05-04 23:15:18.114 +05:30 [INF] Add prescription action triggered for patient ID: 1
+2025-05-04 23:15:19.394 +05:30 [INF] Edit patient action triggered for patient ID: 1
+2025-05-04 23:15:20.290 +05:30 [INF] Edit patient action triggered for patient ID: 1
+2025-05-04 23:15:21.703 +05:30 [INF] Navigating back to PatientsViewModel
+2025-05-04 23:15:21.717 +05:30 [INF] Successfully navigated back to PatientsViewModel
+2025-05-04 23:15:25.088 +05:30 [INF] Add new patient action triggered
+2025-05-04 23:15:26.308 +05:30 [INF] Add new patient action triggered
+2025-05-04 23:15:26.515 +05:30 [INF] Add new patient action triggered
+2025-05-04 23:15:29.678 +05:30 [INF] Navigating to menu item: Dashboard
+2025-05-04 23:15:29.678 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-04 23:15:29.739 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:15:29.740 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 23:15:30.927 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 23:15:30.928 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-04 23:15:30.942 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 23:15:34.106 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 23:15:34.107 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-04 23:15:34.149 +05:30 [INF] OnNavigatedTo called with parameter type: EHRp.ViewModels.PatientListItem
+2025-05-04 23:15:34.150 +05:30 [INF] Navigating to patient details with ID from PatientListItem: 1
+2025-05-04 23:15:34.150 +05:30 [INF] Loading patient details for patient ID: 1
+2025-05-04 23:15:34.151 +05:30 [INF] Successfully loaded patient details for patient ID: 1
+2025-05-04 23:15:34.152 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-04 23:16:09.197 +05:30 [INF] Navigating back to PatientsViewModel
+2025-05-04 23:16:09.210 +05:30 [INF] Successfully navigated back to PatientsViewModel
+2025-05-04 23:16:13.009 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 23:16:13.010 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-04 23:16:13.050 +05:30 [INF] OnNavigatedTo called with parameter type: EHRp.ViewModels.PatientListItem
+2025-05-04 23:16:13.051 +05:30 [INF] Navigating to patient details with ID from PatientListItem: 1
+2025-05-04 23:16:13.051 +05:30 [INF] Loading patient details for patient ID: 1
+2025-05-04 23:16:13.052 +05:30 [INF] Successfully loaded patient details for patient ID: 1
+2025-05-04 23:16:13.052 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-04 23:22:37.193 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:22:37.193 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:22:38.709 +05:30 [INF] Navigating back to PatientsViewModel
+2025-05-04 23:22:38.716 +05:30 [INF] Successfully navigated back to PatientsViewModel
+2025-05-04 23:22:46.433 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 23:22:46.433 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-04 23:22:46.497 +05:30 [INF] OnNavigatedTo called with parameter type: EHRp.ViewModels.PatientListItem
+2025-05-04 23:22:46.497 +05:30 [INF] Navigating to patient details with ID from PatientListItem: 1
+2025-05-04 23:22:46.497 +05:30 [INF] Loading patient details for patient ID: 1
+2025-05-04 23:22:46.498 +05:30 [INF] Successfully loaded patient details for patient ID: 1
+2025-05-04 23:22:46.498 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-04 23:24:01.662 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:24:01.662 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:26:34.338 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:26:34.338 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:26:49.968 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:26:49.969 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:36:18.814 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:36:18.815 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:52:27.325 +05:30 [INF] Database initialized with default user: doctor/password
+2025-05-04 23:52:27.683 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:52:27.759 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:52:27.765 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:52:27.766 +05:30 [INF] Theme settings loaded: Cool Blue - Light
+2025-05-04 23:52:27.766 +05:30 [INF] Initializing theme manager
+2025-05-04 23:52:27.766 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:52:27.768 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:52:27.768 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:52:28.124 +05:30 [INF] Application startup completed, applying theme again
+2025-05-04 23:52:28.124 +05:30 [INF] Applying theme: Cool Blue - Light from avares://EHRp/Themes/CoolBlueLight.axaml
+2025-05-04 23:52:28.162 +05:30 [INF] Theme styles applied successfully: Cool Blue - Light
+2025-05-04 23:52:28.162 +05:30 [INF] Theme applied: Cool Blue - Light
+2025-05-04 23:52:28.772 +05:30 [INF] Main window activated, refreshing theme
+2025-05-04 23:52:28.773 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:52:28.804 +05:30 [INF] Main window opened, refreshing theme
+2025-05-04 23:52:28.804 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:52:28.899 +05:30 [INF] Refreshing theme on all windows after delay
+2025-05-04 23:52:28.899 +05:30 [INF] Refreshing theme on all windows
+2025-05-04 23:53:34.225 +05:30 [INF] User authenticated successfully: doctor (ID: 1)
+2025-05-04 23:53:34.230 +05:30 [INF] Navigating to DashboardViewModel with parameter type: null
+2025-05-04 23:53:34.232 +05:30 [INF] DashboardViewModel created with dependencies
+2025-05-04 23:53:34.265 +05:30 [INF] Navigated to DashboardViewModel
+2025-05-04 23:53:34.266 +05:30 [INF] Successfully navigated to DashboardViewModel
+2025-05-04 23:53:34.266 +05:30 [INF] User logged in successfully: doctor
+2025-05-04 23:53:59.061 +05:30 [INF] Executing AddPatient command
+2025-05-04 23:53:59.083 +05:30 [INF] Navigating to AddPatientViewModel with parameter type: null
+2025-05-04 23:53:59.227 +05:30 [INF] Navigated to AddPatientViewModel
+2025-05-04 23:53:59.230 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 23:53:59.230 +05:30 [INF] Successfully navigated to AddPatientViewModel
+2025-05-04 23:54:13.727 +05:30 [INF] Navigating to menu item: Patients
+2025-05-04 23:54:13.730 +05:30 [INF] Navigating to PatientsViewModel with parameter type: null
+2025-05-04 23:54:13.802 +05:30 [INF] Loaded 2 patients
+2025-05-04 23:54:14.018 +05:30 [INF] Successfully navigated to PatientsViewModel
+2025-05-04 23:54:28.707 +05:30 [INF] Open patient action triggered for patient ID: 1
+2025-05-04 23:54:28.707 +05:30 [INF] Navigating to PatientDetailViewModel with parameter type: PatientListItem
+2025-05-04 23:54:28.868 +05:30 [INF] OnNavigatedTo called with parameter type: EHRp.ViewModels.PatientListItem
+2025-05-04 23:54:28.868 +05:30 [INF] Navigating to patient details with ID from PatientListItem: 1
+2025-05-04 23:54:28.870 +05:30 [INF] Loading patient details for patient ID: 1
+2025-05-04 23:54:28.904 +05:30 [INF] Successfully loaded patient details for patient ID: 1
+2025-05-04 23:54:28.904 +05:30 [INF] Successfully navigated to PatientDetailViewModel
+2025-05-04 23:54:36.273 +05:30 [INF] Navigating to menu item: Calendar
+2025-05-04 23:54:36.274 +05:30 [INF] Navigating to CalendarViewModel with parameter type: null
+2025-05-04 23:54:36.465 +05:30 [INF] Loaded 2 calendar events
+2025-05-04 23:54:36.559 +05:30 [INF] Successfully navigated to CalendarViewModel

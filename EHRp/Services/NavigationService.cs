@@ -51,15 +51,40 @@ namespace EHRp.Services
         {
             try
             {
-                _logger.LogInformation("Navigating to {ViewModelType}", typeof(T).Name);
+                _logger.LogInformation("Navigating to {ViewModelType} with parameter type: {ParameterType}", 
+                    typeof(T).Name, parameter?.GetType().Name ?? "null");
                 
                 // Get the view model from the service provider
-                var viewModel = _serviceProvider.GetRequiredService<T>();
-                
-                // If the view model implements INavigationAware, call OnNavigatedTo
-                if (viewModel is INavigationAware navigationAware)
+                T? viewModel = null;
+                try
                 {
-                    navigationAware.OnNavigatedTo(parameter);
+                    viewModel = _serviceProvider.GetRequiredService<T>();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error getting view model {ViewModelType} from service provider", typeof(T).Name);
+                    
+                    if (ex is InvalidOperationException && ex.Message.Contains("No service for type"))
+                    {
+                        _logger.LogError("The view model {ViewModelType} is not registered in the service collection", typeof(T).Name);
+                    }
+                    
+                    // Try to create a new instance directly as a fallback
+                    try
+                    {
+                        _logger.LogWarning("Attempting to create {ViewModelType} directly as fallback", typeof(T).Name);
+                        viewModel = Activator.CreateInstance<T>();
+                    }
+                    catch (Exception fallbackEx)
+                    {
+                        _logger.LogError(fallbackEx, "Failed to create fallback instance of {ViewModelType}", typeof(T).Name);
+                        throw new InvalidOperationException($"Could not create view model of type {typeof(T).Name}", ex);
+                    }
+                }
+                
+                if (viewModel == null)
+                {
+                    throw new InvalidOperationException($"Failed to create view model of type {typeof(T).Name}");
                 }
                 
                 // Add the current view model to the navigation stack
@@ -67,6 +92,20 @@ namespace EHRp.Services
                 
                 // Send a message to update the current view model
                 WeakReferenceMessenger.Default.Send(new NavigationMessage(viewModel));
+                
+                // If the view model implements INavigationAware, call OnNavigatedTo
+                if (viewModel is INavigationAware navigationAware)
+                {
+                    try
+                    {
+                        navigationAware.OnNavigatedTo(parameter);
+                    }
+                    catch (Exception navEx)
+                    {
+                        _logger.LogError(navEx, "Error in OnNavigatedTo for {ViewModelType}", typeof(T).Name);
+                        // Continue with navigation even if OnNavigatedTo fails
+                    }
+                }
                 
                 // Raise the Navigated event
                 Navigated?.Invoke(this, new NavigationEventArgs(viewModel, parameter));
@@ -76,7 +115,9 @@ namespace EHRp.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error navigating to {ViewModelType}", typeof(T).Name);
-                throw;
+                
+                // Rethrow the exception to be handled by the caller
+                throw new InvalidOperationException($"Navigation to {typeof(T).Name} failed", ex);
             }
         }
         

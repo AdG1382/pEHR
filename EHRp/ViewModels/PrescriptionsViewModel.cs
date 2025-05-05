@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EHRp.ViewModels
 {
-    public partial class PrescriptionsViewModel : ViewModelBase
+    public partial class PrescriptionsViewModel : ViewModelBase, INavigationAware
     {
         [ObservableProperty]
         private ObservableCollection<PrescriptionItem> _prescriptions = new ObservableCollection<PrescriptionItem>();
@@ -195,6 +195,44 @@ namespace EHRp.ViewModels
             // This would filter the prescriptions based on the selected filter
             _logger?.LogInformation("Filter changed to: {Filter}", value);
             Search();
+        }
+        
+        /// <summary>
+        /// Called when the view model is navigated to
+        /// </summary>
+        /// <param name="parameter">The parameter passed during navigation</param>
+        public void OnNavigatedTo(object? parameter)
+        {
+            _logger?.LogInformation("Navigated to PrescriptionsViewModel with parameter: {Parameter}", parameter);
+            
+            try
+            {
+                // Reset any error states
+                StatusMessage = "";
+                IsStatusSuccess = true;
+                
+                // Ensure we have valid data
+                if (Prescriptions == null)
+                {
+                    Prescriptions = new ObservableCollection<PrescriptionItem>();
+                    LoadDummyData();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error in OnNavigatedTo for PrescriptionsViewModel");
+                StatusMessage = $"Error loading prescriptions: {ex.Message}";
+                IsStatusSuccess = false;
+            }
+        }
+        
+        /// <summary>
+        /// Called when the view model is navigated from
+        /// </summary>
+        public void OnNavigatedFrom()
+        {
+            _logger?.LogInformation("Navigated from PrescriptionsViewModel");
+            // Clean up any resources if needed
         }
     }
     

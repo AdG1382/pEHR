@@ -26,6 +26,7 @@
         <vm:BoolToOpacityConverter x:Key="BoolToOpacityConverter"/>
         <vm:BoolToFontWeightConverter x:Key="BoolToFontWeightConverter"/>
         <vm:StringToColorConverter x:Key="StringToColorConverter"/>
+        <vm:EqualityConverter x:Key="EqualityConverter"/>
         <converters:BoolToErrorBrushConverter x:Key="BoolToErrorBrushConverter"/>
         
         <!-- The theme resources will be added here dynamically by the ThemeManager -->

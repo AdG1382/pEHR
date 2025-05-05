@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EHRp.ViewModels
 {
-    public partial class AppointmentsViewModel : ViewModelBase
+    public partial class AppointmentsViewModel : ViewModelBase, INavigationAware
     {
         [ObservableProperty]
         private ObservableCollection<AppointmentItem> _appointments = new ObservableCollection<AppointmentItem>();
@@ -223,6 +223,44 @@ namespace EHRp.ViewModels
             StatusMessage = "Showing all appointments";
             IsStatusSuccess = true;
             _logger?.LogInformation("Showing all appointments");
+        }
+        
+        /// <summary>
+        /// Called when the view model is navigated to
+        /// </summary>
+        /// <param name="parameter">The parameter passed during navigation</param>
+        public void OnNavigatedTo(object? parameter)
+        {
+            _logger?.LogInformation("Navigated to AppointmentsViewModel with parameter: {Parameter}", parameter);
+            
+            try
+            {
+                // Reset any error states
+                StatusMessage = "";
+                IsStatusSuccess = true;
+                
+                // Ensure we have valid data
+                if (Appointments == null)
+                {
+                    Appointments = new ObservableCollection<AppointmentItem>();
+                    LoadDummyData();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "Error in OnNavigatedTo for AppointmentsViewModel");
+                StatusMessage = $"Error loading appointments: {ex.Message}";
+                IsStatusSuccess = false;
+            }
+        }
+        
+        /// <summary>
+        /// Called when the view model is navigated from
+        /// </summary>
+        public void OnNavigatedFrom()
+        {
+            _logger?.LogInformation("Navigated from AppointmentsViewModel");
+            // Clean up any resources if needed
         }
     }
     

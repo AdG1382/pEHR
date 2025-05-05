@@ -12,15 +12,17 @@
     </Design.DataContext>
 
     <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Header -->
         <TextBlock Grid.Row="0" 
                    Text="New Prescription" 
                    FontSize="24" 
                    FontWeight="Bold" 
                    Margin="20,15"
                    HorizontalAlignment="Center"/>
-        
+
+        <!-- Scrollable Form Area -->
         <ScrollViewer Grid.Row="1" Margin="20">
-            <Border Background="White" 
+            <Border Background="{DynamicResource ThemeBackgroundBrush}" 
                     CornerRadius="10" 
                     BoxShadow="0 2 10 0 #20000000"
                     Padding="25">
@@ -34,218 +36,98 @@
                                    Foreground="{Binding IsStatusError, Converter={StaticResource BoolToErrorBrushConverter}}"
                                    TextWrapping="Wrap"/>
                     </Border>
-                    
-                    <!-- Form Fields -->
+
+                    <!-- Form Fields Grid -->
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" VerticalAlignment="Top">
                         <!-- Patient Name -->
-                        <TextBlock Grid.Row="0" Grid.Column="0" 
-                                   Text="Patient:" 
-                                   VerticalAlignment="Center"
-                                   Margin="0,0,15,0"
-                                   FontWeight="Medium"/>
-                        <TextBox Grid.Row="0" Grid.Column="1" 
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Patient:" VerticalAlignment="Center" Margin="0,0,15,0" FontWeight="Medium"/>
+                        <TextBox Grid.Row="0" Grid.Column="1"
                                  Text="{Binding PatientName}" 
                                  Watermark="Enter patient name"
                                  IsReadOnly="{Binding PatientName, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
+
                         <!-- Medication -->
-                        <TextBlock Grid.Row="1" Grid.Column="0" 
-                                   Text="Medication:" 
-                                   VerticalAlignment="Center"
-                                   Margin="0,20,15,0"
-                                   FontWeight="Medium"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" 
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Medication:" VerticalAlignment="Center" Margin="0,20,15,0" FontWeight="Medium"/>
+                        <TextBox Grid.Row="1" Grid.Column="1"
                                  Text="{Binding Medication}" 
                                  Watermark="Enter medication name"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
+
                         <!-- Dosage -->
-                        <TextBlock Grid.Row="2" Grid.Column="0" 
-                                   Text="Dosage:" 
-                                   VerticalAlignment="Center" 
-                                   FontWeight="Medium"/>
-                        <TextBox Grid.Row="2" Grid.Column="1" 
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Dosage:" VerticalAlignment="Center" FontWeight="Medium"/>
+                        <TextBox Grid.Row="2" Grid.Column="1"
                                  Text="{Binding Dosage}" 
                                  Watermark="Enter dosage (e.g., 10mg)"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
+
                         <!-- Frequency -->
-                        <TextBlock Grid.Row="3" Grid.Column="0" 
-                                   Text="Frequency:" 
-                                   VerticalAlignment="Center" 
-                                   FontWeight="Medium"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" 
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Frequency:" VerticalAlignment="Center" FontWeight="Medium"/>
+                        <TextBox Grid.Row="3" Grid.Column="1"
                                  Text="{Binding Frequency}" 
                                  Watermark="Enter frequency (e.g., twice daily)"
                                  Padding="10,8"
                                  Margin="0,0,0,10"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
-                        
-                        <!-- Prescription Type (New Field) -->
-                        <TextBlock Grid.Row="4" Grid.Column="0" 
-                                   Text="Type:" 
-                                   VerticalAlignment="Center" 
-                                   FontWeight="Medium"/>
-                        <ComboBox Grid.Row="4" Grid.Column="1" 
-                                  SelectedIndex="0"
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
+
+                        <!-- Prescription Type -->
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Type:" VerticalAlignment="Center" FontWeight="Medium"/>
+                        <ComboBox Grid.Row="4" Grid.Column="1"
+                                  ItemsSource="{Binding PrescriptionTypeOptions}"
+                                  SelectedItem="{Binding PrescriptionType}"
                                   HorizontalAlignment="Stretch"
                                   Padding="10,8"
                                   Margin="0,0,0,10"
-                                  Background="White">
-                            <ComboBoxItem>Regular</ComboBoxItem>
-                            <ComboBoxItem>Controlled Substance</ComboBoxItem>
-                            <ComboBoxItem>Over-the-counter</ComboBoxItem>
-                            <ComboBoxItem>Refill</ComboBoxItem>
-                            <ComboBox.Styles>
-                                <Style Selector="ComboBox:pointerover /template/ Border#Background">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="ComboBox /template/ ContentPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                </Style>
-                                <Style Selector="ComboBoxItem">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                </Style>
-                                <Style Selector="ComboBoxItem:pointerover /template/ ContentPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlHighlightListLowBrush}"/>
-                                </Style>
-                                <Style Selector="ComboBoxItem:selected /template/ ContentPresenter">
-                                    <Setter Property="Background" Value="{DynamicResource SystemControlHighlightListAccentLowBrush}"/>
-                                </Style>
-                            </ComboBox.Styles>
-                        </ComboBox>
-                        
+                                  Background="{DynamicResource ThemeTextboxBrush}"
+                                  Foreground="{DynamicResource ThemeTextboxForegroundBrush}"/>
+
                         <!-- Start Date -->
-                        <TextBlock Grid.Row="5" Grid.Column="0" 
-                                   Text="Start Date:" 
-                                   VerticalAlignment="Center" 
-                                   FontWeight="Medium"/>
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Start Date:" VerticalAlignment="Center" FontWeight="Medium"/>
                         <DatePicker Grid.Row="5" Grid.Column="1" 
-                                    SelectedDate="{Binding StartDate}"
+                                    SelectedDate="{Binding StartDateOffset}"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
                                     Padding="10,8"
-                                    Margin="0,0,0,10">
-                        </DatePicker>
-                        
+                                    Margin="0,0,0,10"/>
+
                         <!-- End Date -->
-                        <TextBlock Grid.Row="6" Grid.Column="0" 
-                                   Text="End Date:" 
-                                   VerticalAlignment="Center" 
-                                   FontWeight="Medium"/>
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="End Date:" VerticalAlignment="Center" FontWeight="Medium"/>
                         <DatePicker Grid.Row="6" Grid.Column="1" 
-                                    SelectedDate="{Binding EndDate}"
+                                    SelectedDate="{Binding EndDateOffset}"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Center"
                                     Padding="10,8"
-                                    Margin="0,0,0,10">
-                        </DatePicker>
-                        
+                                    Margin="0,0,0,10"/>
+
                         <!-- Notes -->
-                        <TextBlock Grid.Row="7" Grid.Column="0" 
-                                   Text="Notes:" 
-                                   VerticalAlignment="Top" 
-                                   Margin="0,10,0,0"
-                                   FontWeight="Medium"/>
-                        <TextBox Grid.Row="7" Grid.Column="1" 
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="Notes:" VerticalAlignment="Top" Margin="0,10,0,0" FontWeight="Medium"/>
+                        <TextBox Grid.Row="7" Grid.Column="1"
                                  Text="{Binding Notes}" 
                                  Watermark="Enter additional notes"
                                  Height="80"
                                  AcceptsReturn="True"
                                  TextWrapping="Wrap"
                                  Padding="10,8"
-                                 Foreground="Black"
-                                 Background="White">
-                            <TextBox.Styles>
-                                <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#000000"/>
-                                    <Setter Property="BorderThickness" Value="2"/>
-                                </Style>
-                            </TextBox.Styles>
-                        </TextBox>
+                                 Foreground="{DynamicResource ThemeTextboxForegroundBrush}"
+                                 Background="{DynamicResource ThemeTextboxBrush}"/>
                     </Grid>
                 </StackPanel>
             </Border>
         </ScrollViewer>
-        
-        <!-- Buttons -->
-        <StackPanel Grid.Row="2" 
-                    Orientation="Horizontal" 
-                    HorizontalAlignment="Center" 
-                    Margin="0,10,0,20" 
-                    Spacing="15">
-            <Button Content="Save" 
+
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,20" Spacing="15">
+            <Button Content="Save"
                     Command="{Binding SavePrescriptionCommand}"
                     Background="#4CAF50"
                     Foreground="White"
@@ -258,8 +140,8 @@
                     </Style>
                 </Button.Styles>
             </Button>
-            
-            <Button Content="Cancel" 
+
+            <Button Content="Cancel"
                     Command="{Binding CancelCommand}"
                     Background="#F44336"
                     Foreground="White"

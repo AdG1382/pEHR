@@ -44,12 +44,47 @@
                               SelectedItem="{Binding SelectedPatient}"
                               Height="400">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
-                            <DataGridTextColumn Header="Name" Binding="{Binding FullName}" Width="200"/>
-                            <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="80"/>
-                            <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" Width="100"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding PhoneNumber}" Width="150"/>
-                            <DataGridTextColumn Header="Last Visit" Binding="{Binding LastVisit}" Width="120"/>
+                            <!-- Fixed width ID column with no text wrapping -->
+                            <DataGridTextColumn Width="100" Binding="{Binding Id}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock Text="ID" TextWrapping="NoWrap"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            
+                            <!-- Name column with proportional width -->
+                            <DataGridTextColumn Width="2*" Binding="{Binding FullName}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock Text="Name" TextWrapping="NoWrap"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            
+                            <!-- Age column with proportional width -->
+                            <DataGridTextColumn Width="*" Binding="{Binding Age}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock Text="Age" TextWrapping="NoWrap"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            
+                            <!-- Gender column with proportional width -->
+                            <DataGridTextColumn Width="*" Binding="{Binding Gender}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock Text="Gender" TextWrapping="NoWrap"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            
+                            <!-- Phone column with proportional width -->
+                            <DataGridTextColumn Width="1.5*" Binding="{Binding PhoneNumber}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock Text="Phone" TextWrapping="NoWrap"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
+                            
+                            <!-- Last Visit column with proportional width -->
+                            <DataGridTextColumn Width="1.5*" Binding="{Binding LastVisit}">
+                                <DataGridTextColumn.Header>
+                                    <TextBlock Text="Last Visit" TextWrapping="NoWrap"/>
+                                </DataGridTextColumn.Header>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                     
@@ -71,9 +106,11 @@
                         Command="{Binding AddNewPatientCommand}" 
                         Background="{DynamicResource ThemeSuccessBrush}"/>
                 <Button Content="View Details" 
-                        Command="{Binding ViewPatientDetailsCommand}" 
-                        CommandParameter="{Binding SelectedPatient.Id}"
-                        IsEnabled="{Binding SelectedPatient, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+                        Command="{Binding OpenPatientCommand}" 
+                        CommandParameter="{Binding SelectedPatient}"
+                        IsEnabled="{Binding SelectedPatient, Converter={x:Static ObjectConverters.IsNotNull}}"
+                        Background="{DynamicResource ThemeBackgroundBrush}"
+                        Foreground="{DynamicResource ThemeTextboxForegroundBrush}"/>
                 <Button Content="Loading..." 
                         IsVisible="{Binding IsLoading}"
                         IsEnabled="False"/>

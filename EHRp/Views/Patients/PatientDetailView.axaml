@@ -1,0 +1,429 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:EHRp.ViewModels.Patients"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+             x:Class="EHRp.Views.Patients.PatientDetailView"
+             x:DataType="vm:PatientDetailViewModel"
+             x:Name="PatientDetailControl">
+    
+    <Design.DataContext>
+        <vm:PatientDetailViewModel/>
+    </Design.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto" Margin="20,20,20,10">
+            <Button Grid.Column="0" 
+                    Content="Back" 
+                    Command="{Binding GoBackCommand}" 
+                    Margin="0,0,10,0"/>
+            <TextBlock Grid.Column="1" 
+                       Text="{Binding PatientHeaderText, FallbackValue='Patient Details'}" 
+                       FontSize="24" 
+                       FontWeight="Bold"/>
+            <Button Grid.Column="2" 
+                    Content="Edit" 
+                    Command="{Binding EditPatientCommand}" 
+                    IsEnabled="{Binding Patient, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+        </Grid>
+        
+        <!-- Loading and Error Messages -->
+        <StackPanel Grid.Row="1" 
+                    IsVisible="{Binding IsLoading}" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+            <TextBlock Text="Loading patient details..." 
+                       HorizontalAlignment="Center"/>
+            <ProgressBar IsIndeterminate="True" 
+                         Width="200" 
+                         Margin="0,10,0,0"/>
+        </StackPanel>
+        
+        <TextBlock Grid.Row="1"
+                   Text="{Binding ErrorMessage}" 
+                   Foreground="Red" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+        
+        <!-- Main Content - Two Column Layout -->
+        <Grid Grid.Row="1" 
+              ColumnDefinitions="3*,1*" 
+              Margin="20,0,20,0"
+              MinWidth="800"
+              IsVisible="{Binding Patient, Converter={x:Static ObjectConverters.IsNotNull}}">
+            
+            <!-- Left Column - Content changes with tabs -->
+            <Border Grid.Column="0" 
+                    Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Margin="0,0,10,0">
+                
+                <Grid RowDefinitions="Auto,*">
+                    <!-- Tab Bar -->
+                    <Border Grid.Row="0" 
+                            Background="{DynamicResource ThemeHighlightBrush}" 
+                            BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                            BorderThickness="0,0,0,1" 
+                            Padding="10">
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <Button Content="Personal" 
+                                    Command="{Binding ChangeTabCommand}" 
+                                    CommandParameter="0"
+                                    Click="TabButton_Click"
+                                    Tag="0"
+                                    Classes.active="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=0}"
+                                    Padding="15,8"/>
+                            <Button Content="Medical" 
+                                    Command="{Binding ChangeTabCommand}" 
+                                    CommandParameter="1"
+                                    Click="TabButton_Click"
+                                    Tag="1"
+                                    Classes.active="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=1}"
+                                    Padding="15,8"/>
+                            <Button Content="Visits" 
+                                    Command="{Binding ChangeTabCommand}" 
+                                    CommandParameter="2"
+                                    Click="TabButton_Click"
+                                    Tag="2"
+                                    Classes.active="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=2}"
+                                    Padding="15,8"/>
+                            <Button Content="Lab Reports" 
+                                    Command="{Binding ChangeTabCommand}" 
+                                    CommandParameter="3"
+                                    Click="TabButton_Click"
+                                    Tag="3"
+                                    Classes.active="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=3}"
+                                    Padding="15,8"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Tab Content -->
+                    <ScrollViewer Grid.Row="1" Padding="20">
+                        <Panel>
+                            <!-- Personal Tab -->
+                            <Grid IsVisible="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=0}"
+                                  ColumnDefinitions="Auto,*" 
+                                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+                                  VerticalAlignment="Top">
+                                
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Full Name:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding PatientFullName}" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Date of Birth:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Patient.DateOfBirth, StringFormat=\{0:MM/dd/yyyy\}}" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Age:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CalculatedAge}" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Gender:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Patient.Gender, FallbackValue='-'}" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="Phone:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Patient.PhoneNumber, FallbackValue='-'}" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Patient.Email, FallbackValue='-'}" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="Address:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Patient.Address, FallbackValue='-'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="Emergency Contact:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="7" Grid.Column="1" Text="Not specified" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="Insurance Provider:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Patient.InsuranceProvider, FallbackValue='Not specified'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="9" Grid.Column="0" Text="Insurance Number:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Patient.InsuranceNumber, FallbackValue='Not specified'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                            </Grid>
+                            
+                            <!-- Medical Tab -->
+                            <Grid IsVisible="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=1}"
+                                  ColumnDefinitions="Auto,*" 
+                                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+                                  VerticalAlignment="Top">
+                                
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Medical History:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Patient.MedicalHistory, FallbackValue='-'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Chronic Illnesses:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ChronicIllnesses, FallbackValue='-'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Allergies:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Patient.Allergies, FallbackValue='None'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="Current Medications:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding CurrentMedications, FallbackValue='-'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="Past Surgeries:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding PastSurgeries, FallbackValue='-'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="Ongoing Therapies:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding OngoingTherapies, FallbackValue='-'}" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                                
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="Immunizations:" FontWeight="SemiBold" Margin="0,0,15,15"/>
+                                <TextBlock Grid.Row="6" Grid.Column="1" Text="Not specified" TextWrapping="Wrap" Margin="0,0,0,15"/>
+                            </Grid>
+                            
+                            <!-- Visits Tab -->
+                            <Grid IsVisible="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=2}"
+                                  RowDefinitions="Auto,*">
+                                
+                                <TextBlock Grid.Row="0" 
+                                           Text="Visit History" 
+                                           FontSize="18" 
+                                           FontWeight="SemiBold" 
+                                           Margin="0,0,0,15"/>
+                                
+                                <!-- Grid to handle both DataGrid and empty state -->
+                                <Grid Grid.Row="1">
+                                    <!-- DataGrid -->
+                                    <DataGrid ItemsSource="{Binding PatientVisits}" 
+                                              AutoGenerateColumns="False" 
+                                              IsReadOnly="True"
+                                              Margin="0,0,0,10"
+                                              IsVisible="{Binding HasVisits}">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Date" 
+                                                              Binding="{Binding VisitDate, StringFormat=\{0:MM/dd/yyyy\}}" 
+                                                              Width="*"/>
+                                            <DataGridTextColumn Header="Reason" 
+                                                              Binding="{Binding Reason}" 
+                                                              Width="*"/>
+                                            <DataGridTextColumn Header="Diagnosis" 
+                                                              Binding="{Binding Diagnosis}" 
+                                                              Width="2*"/>
+                                            <DataGridTextColumn Header="Treatment" 
+                                                              Binding="{Binding Treatment}" 
+                                                              Width="2*"/>
+                                            <DataGridTextColumn Header="Notes" 
+                                                              Binding="{Binding Notes}" 
+                                                              Width="*"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    
+                                    <!-- Empty state message -->
+                                    <TextBlock Text="No visits recorded for this patient" 
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Margin="0,20"
+                                               FontSize="14"
+                                               Foreground="{DynamicResource ThemeSecondaryTextBrush}"
+                                               IsVisible="{Binding !HasVisits}"/>
+                                </Grid>
+                            </Grid>
+                            
+                            <!-- Lab Reports Tab -->
+                            <Grid IsVisible="{Binding SelectedTabIndex, Converter={StaticResource EqualityConverter}, ConverterParameter=3}"
+                                  RowDefinitions="Auto,*">
+                                
+                                <TextBlock Grid.Row="0" 
+                                           Text="Lab Reports" 
+                                           FontSize="18" 
+                                           FontWeight="SemiBold" 
+                                           Margin="0,0,0,15"/>
+                                
+                                <!-- Grid to handle both DataGrid and empty state -->
+                                <Grid Grid.Row="1">
+                                    <!-- DataGrid -->
+                                    <DataGrid ItemsSource="{Binding LabReports}" 
+                                              AutoGenerateColumns="False" 
+                                              IsReadOnly="True"
+                                              Margin="0,0,0,10"
+                                              IsVisible="{Binding HasLabReports}">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Date" Binding="{Binding UploadDate, StringFormat=\{0:MM/dd/yyyy\}}" Width="*"/>
+                                            <DataGridTextColumn Header="Report Type" Binding="{Binding FileType}" Width="*"/>
+                                            <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                                            <DataGridTextColumn Header="Doctor" Binding="{Binding Patient.LastName, StringFormat='Dr. {0}'}" Width="*"/>
+                                            <DataGridTemplateColumn Header="Actions" Width="*">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Content="View" 
+                                                                Click="ViewLabReport_Click"
+                                                                Tag="{Binding}"
+                                                                HorizontalAlignment="Center"/>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    
+                                    <!-- Empty state message -->
+                                    <TextBlock Text="No lab reports available for this patient" 
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Margin="0,20"
+                                               FontSize="14"
+                                               Foreground="{DynamicResource ThemeSecondaryTextBrush}"
+                                               IsVisible="{Binding !HasLabReports}"/>
+                                </Grid>
+                            </Grid>
+                        </Panel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            
+            <!-- Right Column - Patient Info Card (fixed) -->
+            <Border Grid.Column="1" 
+                    Background="{DynamicResource ThemeBackgroundBrush}" 
+                    BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Margin="10,0,0,0"
+                    MinWidth="250">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <!-- Patient Photo -->
+                        <Border Width="180" 
+                                Height="180" 
+                                CornerRadius="90" 
+                                ClipToBounds="True"
+                                Background="{DynamicResource ThemeHighlightBrush}"
+                                HorizontalAlignment="Center"
+                                Margin="0,10,0,20"
+                                BoxShadow="0 2 10 0 #20000000">
+                            <Image Source="{Binding PatientPhotoPath}" 
+                                   Stretch="UniformToFill"/>
+                        </Border>
+                        
+                        <!-- Patient Summary Info -->
+                        <StackPanel Spacing="15" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding PatientFullName}" 
+                                       FontSize="20" 
+                                       FontWeight="Bold" 
+                                       HorizontalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Center"/>
+                            
+                            <Grid ColumnDefinitions="Auto,Auto" HorizontalAlignment="Center" RowDefinitions="Auto,Auto,Auto">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Age: " FontWeight="SemiBold" Margin="0,0,5,0"/>
+                                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Spacing="5">
+                                    <TextBlock Text="{Binding CalculatedAge}" FontWeight="SemiBold"/>
+                                    <TextBlock Text="years"/>
+                                </StackPanel>
+                                
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Gender: " FontWeight="SemiBold" Margin="0,5,5,0"/>
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Patient.Gender, FallbackValue='-'}" Margin="0,5,0,0"/>
+                                
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Phone: " FontWeight="SemiBold" Margin="0,5,5,0"/>
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Patient.PhoneNumber, FallbackValue='-'}" Margin="0,5,0,0"/>
+                            </Grid>
+                        </StackPanel>
+                        
+                        <!-- Quick Action Buttons -->
+                        <StackPanel Margin="0,30,0,0" Spacing="10">
+                            <Button Content="Edit Patient" 
+                                    Command="{Binding EditPatientCommand}" 
+                                    HorizontalAlignment="Stretch"
+                                    HorizontalContentAlignment="Center"
+                                    Classes="accent-button"
+                                    Padding="0,8"/>
+                            
+                            <Button Content="Add Visit" 
+                                    Command="{Binding AddVisitCommand}" 
+                                    HorizontalAlignment="Stretch"
+                                    HorizontalContentAlignment="Center"
+                                    Background="{DynamicResource ThemeSuccessBrush}"
+                                    Padding="0,8"/>
+                            
+                            <Button Content="Add Prescription" 
+                                    Command="{Binding AddPrescriptionCommand}" 
+                                    HorizontalAlignment="Stretch"
+                                    HorizontalContentAlignment="Center"
+                                    Background="{DynamicResource ThemeSuccessBrush}"
+                                    Padding="0,8"/>
+                        </StackPanel>
+                        
+                        <!-- Insurance Info Summary -->
+                        <Border Background="{DynamicResource ThemeHighlightBrush}" 
+                                BorderBrush="{DynamicResource ThemeBorderBrush}" 
+                                BorderThickness="1" 
+                                CornerRadius="5" 
+                                Margin="0,30,0,0"
+                                Padding="15,10">
+                            <StackPanel>
+                                <TextBlock Text="Insurance" 
+                                           FontWeight="SemiBold" 
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,5"/>
+                                <TextBlock Text="{Binding Patient.InsuranceProvider, FallbackValue='Not specified'}" 
+                                           HorizontalAlignment="Center"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"/>
+                                <TextBlock Text="{Binding Patient.InsuranceNumber, FallbackValue='No policy number'}" 
+                                           HorizontalAlignment="Center"
+                                           Foreground="{DynamicResource ThemeSecondaryTextBrush}"
+                                           FontSize="12"
+                                           Margin="0,5,0,0"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="20,10,20,20"
+                    IsVisible="{Binding Patient, Converter={x:Static ObjectConverters.IsNotNull}}">
+            <Button Content="Back to Patients" 
+                    Command="{Binding GoBackCommand}" 
+                    Margin="0,0,10,0"/>
+        </StackPanel>
+    </Grid>
+    
+    <UserControl.Styles>
+        <!-- Style for active tab buttons -->
+        <Style Selector="Button.active">
+            <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        
+        <!-- Style for accent buttons -->
+        <Style Selector="Button.accent-button">
+            <Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        
+        <!-- DataGrid styles for theme responsiveness -->
+        <Style Selector="DataGrid">
+            <Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+            <Setter Property="GridLinesVisibility" Value="All"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+            <Setter Property="VerticalGridLinesBrush" Value="{DynamicResource ThemeBorderBrush}"/>
+        </Style>
+        
+        <!-- DataGrid header styles -->
+        <Style Selector="DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource ThemeHighlightBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="10,8"/>
+        </Style>
+        
+        <!-- DataGrid cell styles -->
+        <Style Selector="DataGridCell">
+            <Setter Property="Padding" Value="10,5"/>
+        </Style>
+    </UserControl.Styles>
+</UserControl>
